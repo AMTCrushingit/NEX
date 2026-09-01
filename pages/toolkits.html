@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toolkits — Forwardly</title>
+<meta content="Browse all Forwardly professional toolkits. Practical templates and frameworks for career, business, nonprofit, consulting, and founders. Professional Readiness Made Simple." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<style>
+    .cover-career    { background: linear-gradient(135deg, #4C1D95, #6D28D9); }
+    .cover-founder   { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+    .cover-ngo       { background: linear-gradient(135deg, #d97706, #b45309); }
+    .cover-consultant{ background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .cover-business  { background: linear-gradient(135deg, #059669, #047857); }
+    .cover-board     { background: linear-gradient(135deg, #0f172a, #1e293b); }
+    .featured-label  { position: absolute; top: 16px; right: 16px; }
+
+    .coming-soon-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(15,5,32,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .coming-soon-badge {
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 999px;
+    }
+    .toolkit-card.is-coming-soon { opacity: 0.82; }
+    .toolkit-card.is-coming-soon .toolkit-card-cover { position: relative; }
+
+    .advisor-block {
+      background: var(--color-bg-light);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 40px 28px;
+      text-align: center;
+    }
+    .advisor-block-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .advisor-block-title {
+      font-size: 1.375rem;
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .advisor-block-desc {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      max-width: 440px;
+      margin: 0 auto 24px;
+      line-height: 1.7;
+    }
+
+    .site-banner {
+      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+      padding: 12px 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .site-banner-text {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.92);
+      font-weight: 500;
+    }
+    .site-banner .btn { padding: 7px 18px; font-size: 0.78rem; }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+<!-- SITE BANNER -->
+<div class="site-banner">
+<span class="site-banner-text">Still have questions? Speak with a real advisor and get personalized guidance.</span>
+<a class="btn btn-accent btn-sm" href="contact.html">Book a Session</a>
+</div>
+<!-- NAVIGATION -->
+<nav class="nav">
+<div class="container">
+<div class="nav-inner">
+<a class="nav-logo" href="../index.html">
+<div class="nav-logo-mark">F</div>
+        Forwardly
+      </a>
+<div class="nav-links">
+<a class="nav-link" href="../index.html">Home</a>
+<a class="nav-link active" href="toolkits.html">Toolkits</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+<div class="nav-cta">
+<a class="btn btn-primary btn-sm" href="toolkits.html">Browse Toolkits</a>
+</div>
+<button aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+<a class="nav-mobile-link" href="../index.html">Home</a>
+<a class="nav-mobile-link" href="toolkits.html">Toolkits</a>
+<a class="nav-mobile-link" href="categories.html">Categories</a>
+<a class="nav-mobile-link" href="about.html">About</a>
+<a class="nav-mobile-link" href="contact.html">Contact</a>
+<div class="nav-mobile-cta">
+<a class="btn btn-primary btn-full btn-lg" href="toolkits.html">Browse Toolkits →</a>
+</div>
+</div>
+<!-- PAGE HEADER -->
+<div class="page-header">
+<div class="container">
+<div class="hero-eyebrow" style="margin-bottom:16px;">✦ All Toolkits</div>
+<h1 class="page-header-title">Professional Toolkits</h1>
+<p class="page-header-subtitle">Find, purchase, and download the resources you need — instantly.</p>
+</div>
+</div>
+<!-- FILTER + TOOLKITS -->
+<section class="section">
+<div class="container">
+<div class="filter-bar" style="margin-bottom: 32px;">
+<button class="filter-btn active" data-filter="all">All Toolkits</button>
+<button class="filter-btn" data-filter="career">Career</button>
+<button class="filter-btn" data-filter="founder">Founder</button>
+<button class="filter-btn" data-filter="nonprofit">Nonprofit</button>
+<button class="filter-btn" data-filter="consulting">Consulting</button>
+<button class="filter-btn" data-filter="business">Business</button>
+</div>
+<p id="toolkitCount" style="font-size: 0.875rem; color: var(--color-text-muted); margin-bottom: 24px;">Showing 6 toolkits</p>
+<div class="toolkits-grid" id="toolkitsGrid">
+<!-- Founder Toolkit — LIVE -->
+<div class="toolkit-card" data-category="founder">
+<div class="toolkit-card-cover cover-founder">
+<span class="toolkit-card-cover-icon">🚀</span>
+<span class="badge badge-accent featured-label">New</span>
+</div>
+<div class="toolkit-card-body">
+<div class="toolkit-card-meta">
+<span class="badge badge-primary">Founder</span>
+<span style="font-size:0.75rem; color:var(--color-text-muted);">5 items</span>
+</div>
+<h3 class="toolkit-card-title">Founder Toolkit</h3>
+<p class="toolkit-card-desc">Launch with confidence. A complete starter pack for early-stage founders building their first venture.</p>
+<div class="toolkit-card-includes">
+<div class="toolkit-card-includes-title">What's Included</div>
+<div class="toolkit-card-includes-list">
+<span class="toolkit-include-tag">Business Summary</span>
+<span class="toolkit-include-tag">Business Plan</span>
+<span class="toolkit-include-tag">Pitch Deck</span>
+<span class="toolkit-include-tag">Partnership Proposal</span>
+<span class="toolkit-include-tag">Founder Checklist</span>
+</div>
+</div>
+<div class="toolkit-card-footer">
+<div>
+<div class="toolkit-price">$29.99</div>
+<div class="toolkit-price-sub">One-time purchase</div>
+</div>
+<a class="btn btn-primary btn-sm" href="toolkit-detail.html?id=founder">View Toolkit</a>
+</div>
+</div>
+</div>
+<!-- Consultant Toolkit — LIVE -->
+<div class="toolkit-card" data-category="consulting">
+<div class="toolkit-card-cover cover-consultant">
+<span class="toolkit-card-cover-icon">📊</span>
+</div>
+<div class="toolkit-card-body">
+<div class="toolkit-card-meta">
+<span class="badge badge-primary">Consulting</span>
+<span style="font-size:0.75rem; color:var(--color-text-muted);">5 items</span>
+</div>
+<h3 class="toolkit-card-title">Consultant Toolkit</h3>
+<p class="toolkit-card-desc">Win clients and deliver professionally. Everything a consultant needs to operate at a high level.</p>
+<div class="toolkit-card-includes">
+<div class="toolkit-card-includes-title">What's Included</div>
+<div class="toolkit-card-includes-list">
+<span class="toolkit-include-tag">Proposal Template</span>
+<span class="toolkit-include-tag">Scope of Work</span>
+<span class="toolkit-include-tag">Service Agreement</span>
+<span class="toolkit-include-tag">Client Intake</span>
+<span class="toolkit-include-tag">Discovery Questions</span>
+</div>
+</div>
+<div class="toolkit-card-footer">
+<div>
+<div class="toolkit-price">$24.99</div>
+<div class="toolkit-price-sub">One-time purchase</div>
+</div>
+<a class="btn btn-primary btn-sm" href="toolkit-detail.html?id=consultant">View Toolkit</a>
+</div>
+</div>
+</div>
+<!-- NGO Sponsorship Toolkit — LIVE -->
+<div class="toolkit-card" data-category="nonprofit">
+<div class="toolkit-card-cover cover-ngo">
+<span class="toolkit-card-cover-icon">🤝</span>
+</div>
+<div class="toolkit-card-body">
+<div class="toolkit-card-meta">
+<span class="badge badge-primary">Nonprofit</span>
+<span style="font-size:0.75rem; color:var(--color-text-muted);">5 items</span>
+</div>
+<h3 class="toolkit-card-title">NGO Sponsorship Toolkit</h3>
+<p class="toolkit-card-desc">Secure funding and partnerships with professional sponsorship documents built for nonprofits.</p>
+<div class="toolkit-card-includes">
+<div class="toolkit-card-includes-title">What's Included</div>
+<div class="toolkit-card-includes-list">
+<span class="toolkit-include-tag">Sponsorship Letter</span>
+<span class="toolkit-include-tag">Proposal</span>
+<span class="toolkit-include-tag">Follow-Up Templates</span>
+<span class="toolkit-include-tag">Tracking Sheet</span>
+<span class="toolkit-include-tag">Recognition Framework</span>
+</div>
+</div>
+<div class="toolkit-card-footer">
+<div>
+<div class="toolkit-price">$19.99</div>
+<div class="toolkit-price-sub">One-time purchase</div>
+</div>
+<a class="btn btn-primary btn-sm" href="toolkit-detail.html?id=ngo">View Toolkit</a>
+</div>
+</div>
+</div>
+<!-- Career Toolkit — COMING SOON -->
+<div class="toolkit-card is-coming-soon" data-category="career">
+<div class="toolkit-card-cover cover-career">
+<span class="toolkit-card-cover-icon">💼</span>
+<div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+</div>
+<div class="toolkit-card-body">
+<div class="toolkit-card-meta">
+<span class="badge badge-primary">Career</span>
+<span class="badge badge-muted">Coming Soon</span>
+</div>
+<h3 class="toolkit-card-title">Career Toolkit</h3>
+<p class="toolkit-card-desc">Everything you need to land your next role — from a standout resume to a polished LinkedIn profile.</p>
+<div class="toolkit-card-includes">
+<div class="toolkit-card-includes-title">What's Included</div>
+<div class="toolkit-card-includes-list">
+<span class="toolkit-include-tag">Resume Template</span>
+<span class="toolkit-include-tag">Cover Letter</span>
+<span class="toolkit-include-tag">Thank You Letter</span>
+<span class="toolkit-include-tag">LinkedIn Guide</span>
+<span class="toolkit-include-tag">Professional Bio</span>
+</div>
+</div>
+<div class="toolkit-card-footer">
+<div>
+<div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div>
+<div class="toolkit-price-sub">Notify me when available</div>
+</div>
+<a class="btn btn-outline btn-sm" href="contact.html">Get Notified</a>
+</div>
+</div>
+</div>
+<!-- Small Business Toolkit — COMING SOON -->
+<div class="toolkit-card is-coming-soon" data-category="business">
+<div class="toolkit-card-cover cover-business">
+<span class="toolkit-card-cover-icon">🏢</span>
+<div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+</div>
+<div class="toolkit-card-body">
+<div class="toolkit-card-meta">
+<span class="badge badge-primary">Business</span>
+<span class="badge badge-muted">Coming Soon</span>
+</div>
+<h3 class="toolkit-card-title">Small Business Toolkit</h3>
+<p class="toolkit-card-desc">Run your business like a pro. Client-ready documents that make you look established from day one.</p>
+<div class="toolkit-card-includes">
+<div class="toolkit-card-includes-title">What's Included</div>
+<div class="toolkit-card-includes-list">
+<span class="toolkit-include-tag">Invoice Template</span>
+<span class="toolkit-include-tag">Quotation</span>
+<span class="toolkit-include-tag">Proposal</span>
+<span class="toolkit-include-tag">Client Onboarding</span>
+<span class="toolkit-include-tag">Meeting Agenda</span>
+</div>
+</div>
+<div class="toolkit-card-footer">
+<div>
+<div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div>
+<div class="toolkit-price-sub">Notify me when available</div>
+</div>
+<a class="btn btn-outline btn-sm" href="contact.html">Get Notified</a>
+</div>
+</div>
+</div>
+<!-- Board Governance Toolkit — COMING SOON -->
+<div class="toolkit-card is-coming-soon" data-category="nonprofit">
+<div class="toolkit-card-cover cover-board">
+<span class="toolkit-card-cover-icon">🏛️</span>
+<div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
+</div>
+<div class="toolkit-card-body">
+<div class="toolkit-card-meta">
+<span class="badge badge-primary">Governance</span>
+<span class="badge badge-muted">Coming Soon</span>
+</div>
+<h3 class="toolkit-card-title">Board Governance Toolkit</h3>
+<p class="toolkit-card-desc">Structure your board for success. Professional governance documents for organizations of any size.</p>
+<div class="toolkit-card-includes">
+<div class="toolkit-card-includes-title">What's Included</div>
+<div class="toolkit-card-includes-list">
+<span class="toolkit-include-tag">Meeting Agenda</span>
+<span class="toolkit-include-tag">Minutes Template</span>
+<span class="toolkit-include-tag">Board Report</span>
+<span class="toolkit-include-tag">Committee Structure</span>
+<span class="toolkit-include-tag">Governance Checklist</span>
+</div>
+</div>
+<div class="toolkit-card-footer">
+<div>
+<div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div>
+<div class="toolkit-price-sub">Notify me when available</div>
+</div>
+<a class="btn btn-outline btn-sm" href="contact.html">Get Notified</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ADVISOR CTA -->
+<section class="section-sm" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+<div class="container" style="max-width: 640px;">
+<div class="advisor-block">
+<div class="advisor-block-eyebrow">Need a Little More Help?</div>
+<h2 class="advisor-block-title">Talk to a Real Advisor</h2>
+<p class="advisor-block-desc">Have questions or need personalized guidance? Talk to a real advisor and get practical support tailored to your situation.</p>
+<a class="btn btn-primary btn-lg" href="contact.html">Talk to an Advisor →</a>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand-name">Forwardly</div>
+<div class="footer-brand-tagline">Professional Readiness Made Simple.</div>
+</div>
+<div>
+<div class="footer-col-title">Platform</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkits.html">All Toolkits</a>
+<a class="footer-link" href="categories.html">Categories</a>
+<a class="footer-link" href="about.html">About Forwardly</a>
+<a class="footer-link" href="contact.html">Contact</a>
+</div>
+</div>
+<div>
+<div class="footer-col-title">Toolkits</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkit-detail.html?id=founder">Founder</a>
+<a class="footer-link" href="toolkit-detail.html?id=consultant">Consulting</a>
+<a class="footer-link" href="toolkit-detail.html?id=ngo">Nonprofit</a>
+<a class="footer-link" href="contact.html">Career <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+<a class="footer-link" href="contact.html">Small Business <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2026 Forwardly | Professional Readiness Made Simple.</div>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const countEl = document.getElementById('toolkitCount');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      setTimeout(() => {
+        const visible = document.querySelectorAll('.toolkit-card[data-category]:not([style*="display: none"])').length;
+        const cat = btn.dataset.filter;
+        countEl.textContent = cat === 'all'
+          ? `Showing ${visible} toolkits`
+          : `Showing ${visible} toolkit${visible !== 1 ? 's' : ''} in ${btn.textContent}`;
+      }, 50);
+    });
+  });
+</script>
+</body>
+</html>

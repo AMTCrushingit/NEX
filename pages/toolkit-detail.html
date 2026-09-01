@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Toolkit Detail — Forwardly</title>
+<meta content="View toolkit details, contents, and purchase. Professional Readiness Made Simple." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<style>
+    .cover-career    { background: linear-gradient(135deg, #4C1D95, #6D28D9); }
+    .cover-founder   { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+    .cover-ngo       { background: linear-gradient(135deg, #d97706, #b45309); }
+    .cover-consultant{ background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .cover-business  { background: linear-gradient(135deg, #059669, #047857); }
+    .cover-board     { background: linear-gradient(135deg, #0f172a, #1e293b); }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--color-text-muted);
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .breadcrumb a { color: var(--color-text-muted); transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--color-primary); }
+    .breadcrumb-sep { color: var(--color-border); }
+
+    .toolkit-detail-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--color-text);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .toolkit-detail-desc {
+      font-size: 1rem;
+      color: var(--color-text-muted);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .toolkit-detail-include-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: 0.9rem;
+    }
+    .toolkit-detail-include-item:last-child { border-bottom: none; }
+    .check-circle {
+      width: 22px;
+      height: 22px;
+      background: rgba(163,230,53,0.18);
+      color: #3d6b00;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .include-item-name { font-weight: 600; color: var(--color-text); margin-bottom: 2px; }
+    .include-item-desc { font-size: 0.8rem; color: var(--color-text-muted); }
+
+    /* Advisor block on detail page */
+    .advisor-detail-block {
+      background: var(--color-bg-light);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 32px 24px;
+      margin-top: 32px;
+    }
+    .advisor-detail-block-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--color-text);
+      margin-bottom: 8px;
+    }
+    .advisor-detail-block-desc {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .advisor-features {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .advisor-feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--color-text);
+      font-weight: 500;
+    }
+    .advisor-feature-check {
+      width: 20px;
+      height: 20px;
+      background: rgba(163,230,53,0.18);
+      color: #3d6b00;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .related-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--color-bg-light);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 16px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .related-card:hover {
+      border-color: var(--color-secondary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+    }
+    .related-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .related-card-name { font-size: 0.9rem; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .related-card-price { font-size: 0.8rem; color: var(--color-primary); font-weight: 600; }
+
+    .site-banner {
+      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+      padding: 12px 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .site-banner-text { font-size: 0.875rem; color: rgba(255,255,255,0.92); font-weight: 500; }
+    .site-banner .btn { padding: 7px 18px; font-size: 0.78rem; }
+
+    @media (min-width: 640px) {
+      .related-grid { grid-template-columns: repeat(2, 1fr); }
+      .toolkit-detail-title { font-size: 2.25rem; }
+    }
+  </style>
+</head>
+<body>
+<!-- SITE BANNER -->
+<div class="site-banner">
+<span class="site-banner-text">Still have questions? Speak with a real advisor and get personalized guidance.</span>
+<a class="btn btn-accent btn-sm" href="contact.html">Book a Session</a>
+</div>
+<!-- NAVIGATION -->
+<nav class="nav">
+<div class="container">
+<div class="nav-inner">
+<a class="nav-logo" href="../index.html">
+<div class="nav-logo-mark">F</div>
+        Forwardly
+      </a>
+<div class="nav-links">
+<a class="nav-link" href="../index.html">Home</a>
+<a class="nav-link active" href="toolkits.html">Toolkits</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+<div class="nav-cta">
+<a class="btn btn-primary btn-sm" href="toolkits.html">Browse Toolkits</a>
+</div>
+<button aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+<a class="nav-mobile-link" href="../index.html">Home</a>
+<a class="nav-mobile-link" href="toolkits.html">Toolkits</a>
+<a class="nav-mobile-link" href="categories.html">Categories</a>
+<a class="nav-mobile-link" href="about.html">About</a>
+<a class="nav-mobile-link" href="contact.html">Contact</a>
+<div class="nav-mobile-cta">
+<a class="btn btn-primary btn-full btn-lg" href="toolkits.html">Browse Toolkits →</a>
+</div>
+</div>
+<!-- MAIN CONTENT -->
+<section class="section">
+<div class="container">
+<div class="breadcrumb">
+<a href="../index.html">Home</a>
+<span class="breadcrumb-sep">›</span>
+<a href="toolkits.html">Toolkits</a>
+<span class="breadcrumb-sep">›</span>
+<span id="breadcrumbCurrent">Toolkit</span>
+</div>
+<div class="toolkit-detail-grid" id="detailContent"></div>
+</div>
+</section>
+<!-- ADVISOR SECTION -->
+<section class="section-sm" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+<div class="container" style="max-width: 720px;">
+<div style="text-align:center; margin-bottom: 24px;">
+<span class="section-eyebrow">Need More Than Templates?</span>
+</div>
+<div style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 36px 28px; text-align: center;">
+<h2 style="font-size: 1.375rem; font-weight: 800; color: var(--color-text); margin-bottom: 10px; letter-spacing: -0.02em;">Sometimes Templates Are Not Enough</h2>
+<p style="font-size: 0.9rem; color: var(--color-text-muted); max-width: 480px; margin: 0 auto 24px; line-height: 1.7;">
+        If you need guidance, feedback, or help applying these resources to your situation, speak with a real person.
+      </p>
+<div style="display: flex; flex-direction: column; gap: 10px; max-width: 320px; margin: 0 auto 28px; text-align: left;">
+<div class="advisor-feature">
+<div class="advisor-feature-check">✓</div>
+          Personalized advice
+        </div>
+<div class="advisor-feature">
+<div class="advisor-feature-check">✓</div>
+          Feedback on your plans and documents
+        </div>
+<div class="advisor-feature">
+<div class="advisor-feature-check">✓</div>
+          Answers to your questions
+        </div>
+<div class="advisor-feature">
+<div class="advisor-feature-check">✓</div>
+          Clear next-step recommendations
+        </div>
+</div>
+<a class="btn btn-primary btn-lg" href="contact.html">Book a Strategy Session →</a>
+</div>
+</div>
+</section>
+<!-- RELATED TOOLKITS -->
+<section class="section-sm" style="background: var(--color-bg-light);">
+<div class="container">
+<div class="section-header" style="margin-bottom: 24px;">
+<h2 class="section-title" style="font-size: 1.5rem;">More Toolkits</h2>
+</div>
+<div class="related-grid" id="relatedGrid"></div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand-name">Forwardly</div>
+<div class="footer-brand-tagline">Professional Readiness Made Simple.</div>
+</div>
+<div>
+<div class="footer-col-title">Platform</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkits.html">All Toolkits</a>
+<a class="footer-link" href="categories.html">Categories</a>
+<a class="footer-link" href="about.html">About Forwardly</a>
+<a class="footer-link" href="contact.html">Contact</a>
+</div>
+</div>
+<div>
+<div class="footer-col-title">Toolkits</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkit-detail.html?id=founder">Founder</a>
+<a class="footer-link" href="toolkit-detail.html?id=consultant">Consulting</a>
+<a class="footer-link" href="toolkit-detail.html?id=ngo">Nonprofit</a>
+<a class="footer-link" href="contact.html">Career <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+<a class="footer-link" href="contact.html">Small Business <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2026 Forwardly | Professional Readiness Made Simple.</div>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+const TOOLKITS = {
+  career: {
+    id: 'career', title: 'Career Toolkit', category: 'Career', emoji: '💼',
+    coverClass: 'cover-career', price: '$14.99', badge: 'Coming Soon',
+    description: 'Everything you need to land your next role. Whether you\'re entering the job market for the first time or making a career pivot, this toolkit gives you the professional documents that get you noticed — and hired.',
+    problem: 'Most job seekers lose opportunities not because of lack of skill, but because their documents don\'t reflect their value. This toolkit fixes that.',
+    includes: [
+      { name: 'Resume Template', desc: 'Clean, ATS-friendly format that highlights your experience and skills.' },
+      { name: 'Cover Letter Template', desc: 'Customizable letter structure that opens doors and gets interviews.' },
+      { name: 'Thank You Letter', desc: 'Post-interview follow-up that keeps you top of mind.' },
+      { name: 'LinkedIn Optimization Guide', desc: 'Step-by-step guide to building a profile that attracts recruiters.' },
+      { name: 'Professional Bio Template', desc: 'A polished bio for LinkedIn, portfolios, and speaking engagements.' },
+    ], comingSoon: true
+  },
+  founder: {
+    id: 'founder', title: 'Founder Toolkit', category: 'Founder', emoji: '🚀',
+    coverClass: 'cover-founder', price: '$29.99', badge: 'New',
+    description: 'Launch with confidence. This toolkit gives early-stage founders the professional documents they need to communicate their vision, attract partners, and build credibility from day one.',
+    problem: 'Founders often have great ideas but struggle to present them professionally. This toolkit bridges that gap.',
+    includes: [
+      { name: 'One Page Business Summary', desc: 'A concise overview of your business for investors and partners.' },
+      { name: 'Business Plan Framework', desc: 'Structured template covering all key sections of a solid business plan.' },
+      { name: 'Pitch Deck Structure', desc: 'Slide-by-slide framework for a compelling investor presentation.' },
+      { name: 'Partnership Proposal', desc: 'Professional template for approaching potential partners and collaborators.' },
+      { name: 'Founder Checklist', desc: 'Step-by-step checklist covering the essentials of launching a business.' },
+    ], comingSoon: false
+  },
+  ngo: {
+    id: 'ngo', title: 'NGO Sponsorship Toolkit', category: 'Nonprofit', emoji: '🤝',
+    coverClass: 'cover-ngo', price: '$19.99', badge: null,
+    description: 'Secure the funding your organization needs. This toolkit provides nonprofits and community organizations with professional sponsorship documents that build credibility and win corporate and individual sponsors.',
+    problem: 'Many NGOs lose funding opportunities because their outreach materials don\'t look professional. This toolkit changes that.',
+    includes: [
+      { name: 'Sponsorship Letter', desc: 'Compelling outreach letter that clearly communicates your mission and ask.' },
+      { name: 'Sponsorship Proposal', desc: 'Full proposal document with tiers, benefits, and impact metrics.' },
+      { name: 'Follow-Up Templates', desc: 'Email and letter templates for following up with potential sponsors.' },
+      { name: 'Sponsor Tracking Sheet', desc: 'Organized spreadsheet to manage your sponsor pipeline and status.' },
+      { name: 'Recognition Framework', desc: 'Structure for acknowledging and retaining sponsors professionally.' },
+    ], comingSoon: false
+  },
+  consultant: {
+    id: 'consultant', title: 'Consultant Toolkit', category: 'Consulting', emoji: '📊',
+    coverClass: 'cover-consultant', price: '$24.99', badge: null,
+    description: 'Win clients and deliver professionally. This toolkit gives independent consultants and service providers the documents they need to look established, protect their work, and operate at a high level.',
+    problem: 'Consultants often lose clients or face scope creep because they lack professional agreements and processes. This toolkit solves that.',
+    includes: [
+      { name: 'Proposal Template', desc: 'Structured proposal that clearly outlines your approach, timeline, and fees.' },
+      { name: 'Scope of Work', desc: 'Detailed SOW template that defines deliverables and prevents scope creep.' },
+      { name: 'Service Agreement', desc: 'Professional contract template covering terms, payment, and IP.' },
+      { name: 'Client Intake Form', desc: 'Onboarding form to gather everything you need before starting a project.' },
+      { name: 'Discovery Questions', desc: 'Curated question bank for client discovery calls and needs assessments.' },
+    ], comingSoon: false
+  },
+  business: {
+    id: 'business', title: 'Small Business Toolkit', category: 'Business', emoji: '🏢',
+    coverClass: 'cover-business', price: '$19.99', badge: null,
+    description: 'Run your business like a pro from day one. This toolkit gives small business owners the client-facing documents they need to look established, get paid on time, and operate professionally.',
+    problem: 'Small businesses often lose clients or face payment delays because they lack professional documentation. This toolkit fixes that.',
+    includes: [
+      { name: 'Invoice Template', desc: 'Clean, professional invoice that gets you paid faster.' },
+      { name: 'Quotation Template', desc: 'Formal quote document for presenting pricing to potential clients.' },
+      { name: 'Proposal Template', desc: 'Business proposal for winning new clients and projects.' },
+      { name: 'Client Onboarding Pack', desc: 'Welcome documents and process guide for new clients.' },
+      { name: 'Meeting Agenda Template', desc: 'Structured agenda for productive client and team meetings.' },
+    ], comingSoon: true
+  },
+  board: {
+    id: 'board', title: 'Board Governance Toolkit', category: 'Governance', emoji: '🏛️',
+    coverClass: 'cover-board', price: '$39.99', badge: 'Coming Soon',
+    description: 'Structure your board for success. This toolkit provides organizations with the governance documents they need to run effective board meetings, maintain accountability, and operate with transparency.',
+    problem: 'Many organizations struggle with board effectiveness because they lack proper governance structures. This toolkit provides the framework.',
+    includes: [
+      { name: 'Meeting Agenda Template', desc: 'Structured agenda format for productive and focused board meetings.' },
+      { name: 'Minutes Template', desc: 'Professional minutes document for recording decisions and action items.' },
+      { name: 'Board Report Template', desc: 'Executive report format for presenting organizational updates to the board.' },
+      { name: 'Committee Structure', desc: 'Framework for establishing and organizing board committees.' },
+      { name: 'Governance Checklist', desc: 'Comprehensive checklist covering board governance best practices.' },
+    ], comingSoon: true
+  }
+};
+
+function renderDetail() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id') || 'founder';
+  const tk = TOOLKITS[id] || TOOLKITS.founder;
+
+  document.title = `${tk.title} — Forwardly`;
+  document.getElementById('breadcrumbCurrent').textContent = tk.title;
+
+  const includesHTML = tk.includes.map(item => `
+    <div class="toolkit-detail-include-item">
+      <div class="check-circle">✓</div>
+      <div>
+        <div class="include-item-name">${item.name}</div>
+        <div class="include-item-desc">${item.desc}</div>
+      </div>
+    </div>
+  `).join('');
+
+  const purchaseHTML = tk.comingSoon ? `
+    <div style="text-align:center; padding: 20px 0;">
+      <div style="font-size:1.5rem; font-weight:800; color:var(--color-text-muted); margin-bottom:6px;">Coming Soon</div>
+      <div style="font-size:0.875rem; color:var(--color-text-muted); margin-bottom:20px;">This toolkit is currently in development.</div>
+      <a href="contact.html" class="btn btn-outline btn-full btn-lg">Get Notified When Available</a>
+    </div>
+  ` : `
+    <div class="purchase-price">${tk.price}</div>
+    <div class="purchase-price-note">One-time purchase · Instant download</div>
+    <div class="purchase-features">
+      <div class="purchase-feature"><span class="purchase-feature-icon">⚡</span> Instant download after purchase</div>
+      <div class="purchase-feature"><span class="purchase-feature-icon">📁</span> All files included</div>
+      <div class="purchase-feature"><span class="purchase-feature-icon">✏️</span> Fully editable templates</div>
+      <div class="purchase-feature"><span class="purchase-feature-icon">📱</span> Works on mobile & desktop</div>
+      <div class="purchase-feature"><span class="purchase-feature-icon">🔒</span> Secure checkout</div>
+    </div>
+    <button class="btn btn-primary btn-full btn-lg btn-purchase" style="margin-bottom:12px;">
+      Get This Toolkit — ${tk.price}
+    </button>
+    <p style="font-size:0.75rem; color:var(--color-text-muted); text-align:center; margin:0;">
+      Secure payment · No subscription required
+    </p>
+    <div style="border-top:1px solid var(--color-border); margin-top:20px; padding-top:16px; text-align:center;">
+      <p style="font-size:0.8rem; color:var(--color-text-muted); margin-bottom:10px;">Need guidance applying this toolkit?</p>
+      <a href="contact.html" class="btn btn-outline btn-full btn-sm">Talk to an Advisor</a>
+    </div>
+  `;
+
+  document.getElementById('detailContent').innerHTML = `
+    <div>
+      <div class="toolkit-detail-cover ${tk.coverClass}" style="border-radius: var(--radius-xl); height: 240px; display: flex; align-items: center; justify-content: center; font-size: 80px; margin-bottom: 28px;">
+        ${tk.emoji}
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
+        <span class="badge badge-primary">${tk.category}</span>
+        ${tk.badge ? `<span class="badge ${tk.comingSoon ? 'badge-muted' : 'badge-accent'}">${tk.badge}</span>` : ''}
+        <span style="font-size:0.8rem; color:var(--color-text-muted);">5 items included</span>
+      </div>
+      <h1 class="toolkit-detail-title">${tk.title}</h1>
+      <p class="toolkit-detail-desc">${tk.description}</p>
+      <div style="background: rgba(76,29,149,0.05); border-left: 3px solid var(--color-secondary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 16px 20px; margin-bottom: 28px;">
+        <p style="font-size:0.875rem; color:var(--color-text); font-style:italic; margin:0;">"${tk.problem}"</p>
+      </div>
+      <div class="toolkit-detail-includes" style="margin-bottom: 28px;">
+        <div class="toolkit-detail-includes-title"><span>📦</span> What's Included (${tk.includes.length} items)</div>
+        <div>${includesHTML}</div>
+      </div>
+      <!-- Mobile purchase box -->
+      <div class="purchase-box" style="position:static; margin-bottom: 0;" id="mobilePurchase">
+        ${purchaseHTML}
+      </div>
+    </div>
+    <!-- Desktop sticky sidebar -->
+    <div id="desktopSidebar">
+      <div class="purchase-box">
+        ${purchaseHTML}
+      </div>
+    </div>
+  `;
+
+  function handleResize() {
+    const mobile = document.getElementById('mobilePurchase');
+    const desktop = document.getElementById('desktopSidebar');
+    if (!mobile || !desktop) return;
+    if (window.innerWidth >= 768) {
+      mobile.style.display = 'none';
+      desktop.style.display = 'block';
+    } else {
+      mobile.style.display = 'block';
+      desktop.style.display = 'none';
+    }
+  }
+  handleResize();
+  window.addEventListener('resize', handleResize);
+
+  // Related — only show live toolkits
+  const related = Object.values(TOOLKITS).filter(t => t.id !== id && !t.comingSoon).slice(0, 4);
+  document.getElementById('relatedGrid').innerHTML = related.map(t => `
+    <a href="toolkit-detail.html?id=${t.id}" class="related-card">
+      <div class="related-card-icon ${t.coverClass}">${t.emoji}</div>
+      <div>
+        <div class="related-card-name">${t.title}</div>
+        <div class="related-card-price">${t.price}</div>
+      </div>
+    </a>
+  `).join('');
+
+  // Purchase button
+  document.querySelectorAll('.btn-purchase').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const original = btn.innerHTML;
+      btn.innerHTML = '⏳ Processing...';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = '✓ Download Ready — Check Your Email';
+        btn.style.background = '#16a34a';
+        setTimeout(() => {
+          btn.innerHTML = original;
+          btn.disabled = false;
+          btn.style.background = '';
+        }, 4000);
+      }, 1500);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', renderDetail);
+</script>
+</body>
+</html>

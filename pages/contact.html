@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact — Forwardly</title>
+<meta content="Get in touch with the Forwardly team. Talk to a real advisor and get personalized guidance. Professional Readiness Made Simple." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<style>
+    .contact-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+    .contact-info-card { display: flex; align-items: flex-start; gap: 16px; background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 12px; transition: all 0.2s; }
+    .contact-info-card:hover { border-color: var(--color-secondary); box-shadow: var(--shadow-card); }
+    .contact-info-icon { width: 44px; height: 44px; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .contact-info-label { font-size: 0.75rem; font-weight: 700; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+    .contact-info-value { font-size: 0.9rem; font-weight: 600; color: var(--color-text); margin-bottom: 2px; }
+    .contact-info-note { font-size: 0.78rem; color: var(--color-text-muted); margin: 0; }
+
+    .faq-item { border-bottom: 1px solid var(--color-border); padding: 20px 0; }
+    .faq-item:first-child { padding-top: 0; }
+    .faq-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .faq-question { font-size: 0.9rem; font-weight: 700; color: var(--color-text); margin-bottom: 8px; }
+    .faq-answer { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.7; margin: 0; }
+
+    .form-row { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+    /* Advisor highlight block */
+    .advisor-highlight {
+      background: linear-gradient(135deg, var(--color-primary), #3b0764);
+      border-radius: var(--radius-xl);
+      padding: 32px 24px;
+      text-align: center;
+      margin-bottom: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+    .advisor-highlight::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -20%;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(163,230,53,0.12) 0%, transparent 70%);
+    }
+    .advisor-highlight-title { font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 8px; position: relative; }
+    .advisor-highlight-desc { font-size: 0.875rem; color: rgba(255,255,255,0.75); margin-bottom: 0; position: relative; line-height: 1.6; }
+
+    .site-banner { background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); padding: 12px 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .site-banner-text { font-size: 0.875rem; color: rgba(255,255,255,0.92); font-weight: 500; }
+    .site-banner .btn { padding: 7px 18px; font-size: 0.78rem; }
+
+    @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1.6fr; } }
+  </style>
+</head>
+<body>
+<!-- SITE BANNER -->
+<div class="site-banner">
+<span class="site-banner-text">Still have questions? Speak with a real advisor and get personalized guidance.</span>
+<a class="btn btn-accent btn-sm" href="contact.html">Book a Session</a>
+</div>
+<!-- NAVIGATION -->
+<nav class="nav">
+<div class="container">
+<div class="nav-inner">
+<a class="nav-logo" href="../index.html">
+<div class="nav-logo-mark">F</div>
+        Forwardly
+      </a>
+<div class="nav-links">
+<a class="nav-link" href="../index.html">Home</a>
+<a class="nav-link" href="toolkits.html">Toolkits</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link active" href="contact.html">Contact</a>
+</div>
+<div class="nav-cta">
+<a class="btn btn-primary btn-sm" href="toolkits.html">Browse Toolkits</a>
+</div>
+<button aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+<a class="nav-mobile-link" href="../index.html">Home</a>
+<a class="nav-mobile-link" href="toolkits.html">Toolkits</a>
+<a class="nav-mobile-link" href="categories.html">Categories</a>
+<a class="nav-mobile-link" href="about.html">About</a>
+<a class="nav-mobile-link" href="contact.html">Contact</a>
+<div class="nav-mobile-cta">
+<a class="btn btn-primary btn-full btn-lg" href="toolkits.html">Browse Toolkits →</a>
+</div>
+</div>
+<!-- PAGE HEADER -->
+<div class="page-header">
+<div class="container">
+<div class="hero-eyebrow" style="margin-bottom:16px;">✦ We're Here to Help</div>
+<h1 class="page-header-title">Talk to a Real Advisor</h1>
+<p class="page-header-subtitle">Get personalized guidance tailored to your situation.</p>
+</div>
+</div>
+<section class="section">
+<div class="container">
+<div class="contact-grid">
+<!-- Left: Advisor highlight + Info + FAQ -->
+<div>
+<!-- Advisor highlight -->
+<div class="advisor-highlight">
+<div class="advisor-highlight-title">Need a Little More Help?</div>
+<p class="advisor-highlight-desc">Have questions or need personalized guidance? Talk to a real advisor and get practical support tailored to your situation.</p>
+</div>
+<!-- Contact Info -->
+<div style="margin-bottom: 32px;">
+<span class="section-eyebrow" style="margin-bottom: 16px; display:block;">Reach Us</span>
+<div class="contact-info-card">
+<div class="contact-info-icon">✉️</div>
+<div>
+<div class="contact-info-label">Email</div>
+<div class="contact-info-value">hello@forwardly.co</div>
+<p class="contact-info-note">We respond within 24 hours.</p>
+</div>
+</div>
+<div class="contact-info-card">
+<div class="contact-info-icon">💬</div>
+<div>
+<div class="contact-info-label">Support</div>
+<div class="contact-info-value">support@forwardly.co</div>
+<p class="contact-info-note">For purchase and download issues.</p>
+</div>
+</div>
+<div class="contact-info-card">
+<div class="contact-info-icon">🤝</div>
+<div>
+<div class="contact-info-label">Partnerships</div>
+<div class="contact-info-value">partners@forwardly.co</div>
+<p class="contact-info-note">For bulk orders and organizational licensing.</p>
+</div>
+</div>
+</div>
+<!-- FAQ -->
+<div>
+<span class="section-eyebrow" style="margin-bottom: 16px; display:block;">Common Questions</span>
+<div class="faq-item">
+<div class="faq-question">How do I receive my toolkit after purchase?</div>
+<p class="faq-answer">You'll receive an instant download link immediately after your payment is confirmed. No waiting, no delays.</p>
+</div>
+<div class="faq-item">
+<div class="faq-question">What format are the templates in?</div>
+<p class="faq-answer">Templates are provided in editable formats (Word, Google Docs compatible) so you can customize them immediately.</p>
+</div>
+<div class="faq-item">
+<div class="faq-question">Is there a subscription or recurring fee?</div>
+<p class="faq-answer">No. Forwardly uses simple one-time pricing. You pay once and own the toolkit forever — no subscriptions, no renewals.</p>
+</div>
+<div class="faq-item">
+<div class="faq-question">Can I use the templates for my clients?</div>
+<p class="faq-answer">Yes. Toolkits are licensed for personal and professional use, including use with your clients and organization.</p>
+</div>
+<div class="faq-item">
+<div class="faq-question">Do you offer bulk or team pricing?</div>
+<p class="faq-answer">Yes. Contact us at partners@forwardly.co for bulk orders, team licenses, and organizational pricing.</p>
+</div>
+</div>
+</div>
+<!-- Right: Contact Form -->
+<div>
+<span class="section-eyebrow" style="margin-bottom: 16px; display:block;">Send a Message</span>
+<div class="contact-form">
+<form id="contactForm" novalidate="">
+<div class="form-row">
+<div class="form-group">
+<label class="form-label" for="firstName">First Name</label>
+<input class="form-input" id="firstName" name="firstName" placeholder="Jane" required="" type="text"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="lastName">Last Name</label>
+<input class="form-input" id="lastName" name="lastName" placeholder="Smith" required="" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label class="form-label" for="email">Email Address</label>
+<input class="form-input" id="email" name="email" placeholder="jane@example.com" required="" type="email"/>
+</div>
+<div class="form-group">
+<label class="form-label" for="subject">Subject</label>
+<select class="form-select" id="subject" name="subject">
+<option value="">Select a topic...</option>
+<option value="advisor">Book a Strategy Session</option>
+<option value="purchase">Purchase Question</option>
+<option value="download">Download Issue</option>
+<option value="toolkit">Toolkit Question</option>
+<option value="notify">Get Notified — Coming Soon Toolkit</option>
+<option value="partnership">Partnership / Bulk Order</option>
+<option value="feedback">Feedback</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div class="form-group">
+<label class="form-label" for="message">Message</label>
+<textarea class="form-textarea" id="message" name="message" placeholder="Tell us how we can help..." required="" rows="5"></textarea>
+</div>
+<button class="btn btn-primary btn-full btn-lg" type="submit">
+              Send Message →
+            </button>
+<p style="font-size: 0.75rem; color: var(--color-text-muted); text-align: center; margin-top: 12px; margin-bottom: 0;">
+              We typically respond within 24 hours.
+            </p>
+</form>
+</div>
+<!-- Quick Links -->
+<div style="margin-top: 24px; background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 20px;">
+<div style="font-size: 0.8rem; font-weight: 700; color: var(--color-text); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.06em;">Quick Links</div>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<a href="toolkits.html" style="font-size: 0.875rem; color: var(--color-primary); font-weight: 500;">→ Browse All Toolkits</a>
+<a href="categories.html" style="font-size: 0.875rem; color: var(--color-primary); font-weight: 500;">→ Browse by Category</a>
+<a href="about.html" style="font-size: 0.875rem; color: var(--color-primary); font-weight: 500;">→ About Forwardly</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand-name">Forwardly</div>
+<div class="footer-brand-tagline">Professional Readiness Made Simple.</div>
+</div>
+<div>
+<div class="footer-col-title">Platform</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkits.html">All Toolkits</a>
+<a class="footer-link" href="categories.html">Categories</a>
+<a class="footer-link" href="about.html">About Forwardly</a>
+<a class="footer-link" href="contact.html">Contact</a>
+</div>
+</div>
+<div>
+<div class="footer-col-title">Toolkits</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkit-detail.html?id=founder">Founder</a>
+<a class="footer-link" href="toolkit-detail.html?id=consultant">Consulting</a>
+<a class="footer-link" href="toolkit-detail.html?id=ngo">Nonprofit</a>
+<a class="footer-link" href="contact.html">Career <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+<a class="footer-link" href="contact.html">Small Business <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2026 Forwardly | Professional Readiness Made Simple.</div>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

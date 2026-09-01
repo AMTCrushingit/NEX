@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About — Forwardly</title>
+<meta content="Forwardly provides proven business and professional resources built from real-world experience. Professional Readiness Made Simple." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<style>
+    .mission-block {
+      background: linear-gradient(135deg, var(--color-primary), #3b0764);
+      border-radius: var(--radius-xl);
+      padding: 40px 28px;
+      text-align: center;
+      margin-bottom: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .mission-block::before {
+      content: '';
+      position: absolute;
+      top: -40%; right: -20%;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(163,230,53,0.1) 0%, transparent 70%);
+    }
+    .mission-block-label {
+      font-size: 0.75rem; font-weight: 700; color: var(--color-accent);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; position: relative;
+    }
+    .mission-block-text {
+      font-size: 1.25rem; font-weight: 700; color: #fff;
+      line-height: 1.5; position: relative; margin: 0;
+    }
+    .who-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 48px; }
+    .who-item { display: flex; align-items: center; gap: 14px; background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 16px 20px; }
+    .who-item-icon { font-size: 24px; flex-shrink: 0; }
+    .who-item-name { font-size: 0.9rem; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .who-item-desc { font-size: 0.8rem; color: var(--color-text-muted); margin: 0; }
+    .not-list { display: flex; flex-direction: column; gap: 10px; }
+    .not-item { display: flex; align-items: center; gap: 12px; font-size: 0.875rem; color: var(--color-text-muted); }
+    .not-icon { width: 22px; height: 22px; background: rgba(239,68,68,0.1); color: #dc2626; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; }
+    .is-list { display: flex; flex-direction: column; gap: 10px; }
+    .is-item { display: flex; align-items: center; gap: 12px; font-size: 0.875rem; color: var(--color-text); font-weight: 500; }
+    .is-icon { width: 22px; height: 22px; background: rgba(163,230,53,0.18); color: #3d6b00; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; flex-shrink: 0; }
+    .compare-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 48px; }
+    .compare-card { border-radius: var(--radius-lg); padding: 24px; border: 1px solid var(--color-border); }
+    .compare-card-title { font-size: 0.875rem; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+
+    .site-banner { background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); padding: 12px 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .site-banner-text { font-size: 0.875rem; color: rgba(255,255,255,0.92); font-weight: 500; }
+    .site-banner .btn { padding: 7px 18px; font-size: 0.78rem; }
+
+    @media (min-width: 640px) {
+      .who-grid { grid-template-columns: repeat(2, 1fr); }
+      .compare-grid { grid-template-columns: repeat(2, 1fr); }
+      .mission-block-text { font-size: 1.5rem; }
+    }
+    @media (min-width: 768px) { .who-grid { grid-template-columns: repeat(3, 1fr); } }
+  </style>
+</head>
+<body>
+<!-- SITE BANNER -->
+<div class="site-banner">
+<span class="site-banner-text">Still have questions? Speak with a real advisor and get personalized guidance.</span>
+<a class="btn btn-accent btn-sm" href="contact.html">Book a Session</a>
+</div>
+<!-- NAVIGATION -->
+<nav class="nav">
+<div class="container">
+<div class="nav-inner">
+<a class="nav-logo" href="../index.html">
+<div class="nav-logo-mark">F</div>
+        Forwardly
+      </a>
+<div class="nav-links">
+<a class="nav-link" href="../index.html">Home</a>
+<a class="nav-link" href="toolkits.html">Toolkits</a>
+<a class="nav-link" href="categories.html">Categories</a>
+<a class="nav-link active" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+<div class="nav-cta">
+<a class="btn btn-primary btn-sm" href="toolkits.html">Browse Toolkits</a>
+</div>
+<button aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+<a class="nav-mobile-link" href="../index.html">Home</a>
+<a class="nav-mobile-link" href="toolkits.html">Toolkits</a>
+<a class="nav-mobile-link" href="categories.html">Categories</a>
+<a class="nav-mobile-link" href="about.html">About</a>
+<a class="nav-mobile-link" href="contact.html">Contact</a>
+<div class="nav-mobile-cta">
+<a class="btn btn-primary btn-full btn-lg" href="toolkits.html">Browse Toolkits →</a>
+</div>
+</div>
+<!-- PAGE HEADER -->
+<div class="page-header">
+<div class="container">
+<div class="hero-eyebrow" style="margin-bottom:16px;">✦ Our Story</div>
+<h1 class="page-header-title">About Forwardly</h1>
+<p class="page-header-subtitle">Professional Readiness Made Simple.</p>
+</div>
+</div>
+<section class="section">
+<div class="container" style="max-width: 760px;">
+<!-- Mission -->
+<div class="mission-block">
+<div class="mission-block-label">Our Mission</div>
+<p class="mission-block-text">"Forwardly provides proven business and professional resources built from real-world experience — so anyone can look professional, operate professionally, and get ready for what's next."</p>
+</div>
+<!-- What is Forwardly -->
+<div style="margin-bottom: 48px;">
+<span class="section-eyebrow">What is Forwardly?</span>
+<h2 class="section-title" style="font-size: 1.75rem; margin-bottom: 16px;">Professional Readiness Made Simple</h2>
+<p style="font-size: 1rem; color: var(--color-text-muted); line-height: 1.8; margin-bottom: 16px;">
+        Forwardly is a mobile-first platform that gives individuals, businesses, nonprofits, and founders the practical tools they need to operate professionally — without the complexity, cost, or learning curve of traditional platforms.
+      </p>
+<p style="font-size: 1rem; color: var(--color-text-muted); line-height: 1.8;">
+        Every toolkit on Forwardly is built from real-world experience. These aren't generic templates — they're the actual frameworks, documents, and guides that professionals use to get results.
+      </p>
+</div>
+<!-- What Forwardly is / isn't -->
+<div class="compare-grid">
+<div class="compare-card" style="background: rgba(163,230,53,0.04);">
+<div class="compare-card-title" style="color: #3d6b00;">
+<span style="font-size:16px;">✓</span> Forwardly Is
+        </div>
+<div class="is-list">
+<div class="is-item"><div class="is-icon">✓</div> A toolkit &amp; template platform</div>
+<div class="is-item"><div class="is-icon">✓</div> Practical, ready-to-use resources</div>
+<div class="is-item"><div class="is-icon">✓</div> Built from real-world experience</div>
+<div class="is-item"><div class="is-icon">✓</div> Simple one-time purchases</div>
+<div class="is-item"><div class="is-icon">✓</div> Instant download, immediate use</div>
+<div class="is-item"><div class="is-icon">✓</div> Mobile-first and fast</div>
+</div>
+</div>
+<div class="compare-card" style="background: rgba(239,68,68,0.03);">
+<div class="compare-card-title" style="color: #dc2626;">
+<span style="font-size:16px;">✕</span> Forwardly Is Not
+        </div>
+<div class="not-list">
+<div class="not-item"><div class="not-icon">✕</div> A learning or course platform</div>
+<div class="not-item"><div class="not-icon">✕</div> A CRM or project management tool</div>
+<div class="not-item"><div class="not-icon">✕</div> A marketplace for freelancers</div>
+<div class="not-item"><div class="not-icon">✕</div> A coaching or consulting service</div>
+<div class="not-item"><div class="not-icon">✕</div> An AI platform</div>
+<div class="not-item"><div class="not-icon">✕</div> A subscription service</div>
+</div>
+</div>
+</div>
+<!-- Who it's for -->
+<div style="margin-bottom: 48px;">
+<span class="section-eyebrow">Who It's For</span>
+<h2 class="section-title" style="font-size: 1.75rem; margin-bottom: 24px;">Built for Real People</h2>
+<div class="who-grid">
+<div class="who-item">
+<div class="who-item-icon">💼</div>
+<div><div class="who-item-name">Job Seekers</div><p class="who-item-desc">Land your next role with professional documents.</p></div>
+</div>
+<div class="who-item">
+<div class="who-item-icon">🚀</div>
+<div><div class="who-item-name">Founders</div><p class="who-item-desc">Launch with the frameworks that matter.</p></div>
+</div>
+<div class="who-item">
+<div class="who-item-icon">🏢</div>
+<div><div class="who-item-name">Small Businesses</div><p class="who-item-desc">Operate professionally from day one.</p></div>
+</div>
+<div class="who-item">
+<div class="who-item-icon">📊</div>
+<div><div class="who-item-name">Consultants</div><p class="who-item-desc">Win clients and protect your work.</p></div>
+</div>
+<div class="who-item">
+<div class="who-item-icon">🤝</div>
+<div><div class="who-item-name">Nonprofits</div><p class="who-item-desc">Secure funding and run your organization well.</p></div>
+</div>
+<div class="who-item">
+<div class="who-item-icon">🏛️</div>
+<div><div class="who-item-name">Boards &amp; Orgs</div><p class="who-item-desc">Govern with structure and accountability.</p></div>
+</div>
+</div>
+</div>
+<!-- Values -->
+<div style="margin-bottom: 48px;">
+<span class="section-eyebrow">Our Values</span>
+<h2 class="section-title" style="font-size: 1.75rem; margin-bottom: 24px;">What We Stand For</h2>
+<div class="about-values">
+<div class="value-card"><div class="value-icon">⚡</div><div class="value-title">Simplicity</div><p class="value-desc">No complexity. No dashboards. No learning curve. Find it, buy it, use it.</p></div>
+<div class="value-card"><div class="value-icon">🎯</div><div class="value-title">Practicality</div><p class="value-desc">Every resource is built for real-world use — not theory, not fluff.</p></div>
+<div class="value-card"><div class="value-icon">🌍</div><div class="value-title">Accessibility</div><p class="value-desc">Professional tools shouldn't be expensive or hard to find. Forwardly makes them available to everyone.</p></div>
+<div class="value-card"><div class="value-icon">✦</div><div class="value-title">Quality</div><p class="value-desc">Every toolkit is tested against real professional standards before it's published.</p></div>
+<div class="value-card"><div class="value-icon">📱</div><div class="value-title">Mobile-First</div><p class="value-desc">Built for how people actually work — on their phones, on the go, in the moment.</p></div>
+<div class="value-card"><div class="value-icon">🔒</div><div class="value-title">Trust</div><p class="value-desc">Simple pricing, secure checkout, and no hidden fees. Ever.</p></div>
+</div>
+</div>
+<!-- Success Metric -->
+<div style="background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 32px 24px; text-align: center; margin-bottom: 48px;">
+<div class="section-eyebrow" style="margin-bottom: 12px;">Our Definition of Success</div>
+<h3 style="font-size: 1.25rem; font-weight: 800; color: var(--color-text); margin-bottom: 20px;">A user should be able to:</h3>
+<div style="display: flex; flex-direction: column; gap: 8px; align-items: center; max-width: 280px; margin: 0 auto;">
+<div style="font-size: 0.9rem; font-weight: 600; color: var(--color-text);">Open site</div>
+<div style="color: var(--color-accent); font-size: 1.2rem;">↓</div>
+<div style="font-size: 0.9rem; font-weight: 600; color: var(--color-text);">Find toolkit</div>
+<div style="color: var(--color-accent); font-size: 1.2rem;">↓</div>
+<div style="font-size: 0.9rem; font-weight: 600; color: var(--color-text);">Purchase</div>
+<div style="color: var(--color-accent); font-size: 1.2rem;">↓</div>
+<div style="font-size: 0.9rem; font-weight: 600; color: var(--color-text);">Download</div>
+<div style="color: var(--color-accent); font-size: 1.2rem;">↓</div>
+<div style="font-size: 0.9rem; font-weight: 700; color: var(--color-primary);">Start using within 5 minutes</div>
+</div>
+<p style="font-size: 0.8rem; color: var(--color-text-muted); margin-top: 20px; margin-bottom: 0;">If that works, the MVP is successful.</p>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="section-sm" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+<div class="container">
+<div class="cta-banner">
+<h2 class="cta-banner-title">Ready for What's Next?</h2>
+<p class="cta-banner-subtitle">Browse our toolkits and find the resources you need today.</p>
+<div class="cta-banner-actions">
+<a class="btn btn-accent btn-lg" href="toolkits.html">Browse Toolkits →</a>
+<a class="btn btn-ghost btn-lg" href="contact.html">Talk to an Advisor</a>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand-name">Forwardly</div>
+<div class="footer-brand-tagline">Professional Readiness Made Simple.</div>
+</div>
+<div>
+<div class="footer-col-title">Platform</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkits.html">All Toolkits</a>
+<a class="footer-link" href="categories.html">Categories</a>
+<a class="footer-link" href="about.html">About Forwardly</a>
+<a class="footer-link" href="contact.html">Contact</a>
+</div>
+</div>
+<div>
+<div class="footer-col-title">Toolkits</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkit-detail.html?id=founder">Founder</a>
+<a class="footer-link" href="toolkit-detail.html?id=consultant">Consulting</a>
+<a class="footer-link" href="toolkit-detail.html?id=ngo">Nonprofit</a>
+<a class="footer-link" href="contact.html">Career <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+<a class="footer-link" href="contact.html">Small Business <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2026 Forwardly | Professional Readiness Made Simple.</div>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Categories — Forwardly</title>
+<meta content="Browse Forwardly toolkits by category — Career, Business, Nonprofit, Consulting, and Founder. Professional Readiness Made Simple." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="../css/styles.css" rel="stylesheet"/>
+<style>
+    .cover-career    { background: linear-gradient(135deg, #4C1D95, #6D28D9); }
+    .cover-founder   { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+    .cover-ngo       { background: linear-gradient(135deg, #d97706, #b45309); }
+    .cover-consultant{ background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+    .cover-business  { background: linear-gradient(135deg, #059669, #047857); }
+    .cover-board     { background: linear-gradient(135deg, #0f172a, #1e293b); }
+
+    .cat-section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+    .cat-section:last-child { border-bottom: none; }
+    .cat-section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+    .cat-section-icon { width: 52px; height: 52px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 24px; flex-shrink: 0; }
+    .cat-section-title { font-size: 1.5rem; font-weight: 800; color: var(--color-text); letter-spacing: -0.02em; margin-bottom: 4px; }
+    .cat-section-desc { font-size: 0.875rem; color: var(--color-text-muted); margin: 0; }
+
+    .cat-toolkit-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      background: var(--color-bg-light); border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg); padding: 18px 20px; margin-bottom: 12px;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .cat-toolkit-row:hover { border-color: var(--color-secondary); background: rgba(76,29,149,0.03); transform: translateX(4px); box-shadow: var(--shadow-card); }
+    .cat-toolkit-row.is-coming-soon { opacity: 0.7; cursor: default; }
+    .cat-toolkit-row.is-coming-soon:hover { transform: none; box-shadow: none; border-color: var(--color-border); background: var(--color-bg-light); }
+
+    .cat-toolkit-row-left { display: flex; align-items: center; gap: 14px; flex: 1; min-width: 0; }
+    .cat-toolkit-row-icon { width: 40px; height: 40px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .cat-toolkit-row-name { font-size: 0.9rem; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+    .cat-toolkit-row-items { font-size: 0.78rem; color: var(--color-text-muted); }
+    .cat-toolkit-row-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .cat-toolkit-price { font-size: 1rem; font-weight: 800; color: var(--color-primary); }
+    .cat-toolkit-price.muted { color: var(--color-text-muted); font-size: 0.875rem; font-weight: 600; }
+
+    .cat-hero-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 48px; }
+    .cat-hero-card { border-radius: var(--radius-xl); padding: 28px 20px; text-align: center; text-decoration: none; transition: all 0.2s; display: block; }
+    .cat-hero-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+    .cat-hero-card-icon { font-size: 32px; margin-bottom: 10px; }
+    .cat-hero-card-name { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .cat-hero-card-count { font-size: 0.75rem; color: rgba(255,255,255,0.7); }
+
+    .site-banner { background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); padding: 12px 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .site-banner-text { font-size: 0.875rem; color: rgba(255,255,255,0.92); font-weight: 500; }
+    .site-banner .btn { padding: 7px 18px; font-size: 0.78rem; }
+
+    @media (min-width: 640px) { .cat-hero-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .cat-hero-grid { grid-template-columns: repeat(5, 1fr); } }
+  </style>
+</head>
+<body>
+<!-- SITE BANNER -->
+<div class="site-banner">
+<span class="site-banner-text">Still have questions? Speak with a real advisor and get personalized guidance.</span>
+<a class="btn btn-accent btn-sm" href="contact.html">Book a Session</a>
+</div>
+<!-- NAVIGATION -->
+<nav class="nav">
+<div class="container">
+<div class="nav-inner">
+<a class="nav-logo" href="../index.html">
+<div class="nav-logo-mark">F</div>
+        Forwardly
+      </a>
+<div class="nav-links">
+<a class="nav-link" href="../index.html">Home</a>
+<a class="nav-link" href="toolkits.html">Toolkits</a>
+<a class="nav-link active" href="categories.html">Categories</a>
+<a class="nav-link" href="about.html">About</a>
+<a class="nav-link" href="contact.html">Contact</a>
+</div>
+<div class="nav-cta">
+<a class="btn btn-primary btn-sm" href="toolkits.html">Browse Toolkits</a>
+</div>
+<button aria-label="Toggle menu" class="nav-toggle" id="navToggle">
+<span></span><span></span><span></span>
+</button>
+</div>
+</div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+<a class="nav-mobile-link" href="../index.html">Home</a>
+<a class="nav-mobile-link" href="toolkits.html">Toolkits</a>
+<a class="nav-mobile-link" href="categories.html">Categories</a>
+<a class="nav-mobile-link" href="about.html">About</a>
+<a class="nav-mobile-link" href="contact.html">Contact</a>
+<div class="nav-mobile-cta">
+<a class="btn btn-primary btn-full btn-lg" href="toolkits.html">Browse Toolkits →</a>
+</div>
+</div>
+<!-- PAGE HEADER -->
+<div class="page-header">
+<div class="container">
+<div class="hero-eyebrow" style="margin-bottom:16px;">✦ Browse by Category</div>
+<h1 class="page-header-title">Categories</h1>
+<p class="page-header-subtitle">Find the toolkit that fits your situation.</p>
+</div>
+</div>
+<section class="section">
+<div class="container">
+<!-- Category Quick Nav -->
+<div class="cat-hero-grid">
+<a class="cat-hero-card cover-career" href="#career">
+<div class="cat-hero-card-icon">💼</div>
+<div class="cat-hero-card-name">Career</div>
+<div class="cat-hero-card-count">Coming Soon</div>
+</a>
+<a class="cat-hero-card cover-business" href="#business">
+<div class="cat-hero-card-icon">🏢</div>
+<div class="cat-hero-card-name">Business</div>
+<div class="cat-hero-card-count">Coming Soon</div>
+</a>
+<a class="cat-hero-card cover-ngo" href="#nonprofit">
+<div class="cat-hero-card-icon">🤝</div>
+<div class="cat-hero-card-name">Nonprofit</div>
+<div class="cat-hero-card-count">2 toolkits</div>
+</a>
+<a class="cat-hero-card cover-consultant" href="#consulting">
+<div class="cat-hero-card-icon">📊</div>
+<div class="cat-hero-card-name">Consulting</div>
+<div class="cat-hero-card-count">1 toolkit</div>
+</a>
+<a class="cat-hero-card cover-founder" href="#founder">
+<div class="cat-hero-card-icon">🚀</div>
+<div class="cat-hero-card-name">Founder</div>
+<div class="cat-hero-card-count">1 toolkit</div>
+</a>
+</div>
+<!-- Career -->
+<div class="cat-section" id="career">
+<div class="cat-section-header">
+<div class="cat-section-icon cover-career">💼</div>
+<div>
+<div class="cat-section-title">Career</div>
+<p class="cat-section-desc">For job seekers and professionals ready to level up.</p>
+</div>
+</div>
+<div class="cat-toolkit-row is-coming-soon">
+<div class="cat-toolkit-row-left">
+<div class="cat-toolkit-row-icon cover-career">💼</div>
+<div>
+<div class="cat-toolkit-row-name">Career Toolkit <span class="badge badge-muted" style="margin-left:8px; font-size:0.7rem;">Coming Soon</span></div>
+<div class="cat-toolkit-row-items">Resume · Cover Letter · LinkedIn Guide · Professional Bio · Thank You Letter</div>
+</div>
+</div>
+<div class="cat-toolkit-row-right">
+<a class="btn btn-outline btn-sm" href="contact.html">Get Notified</a>
+</div>
+</div>
+</div>
+<!-- Business -->
+<div class="cat-section" id="business">
+<div class="cat-section-header">
+<div class="cat-section-icon cover-business">🏢</div>
+<div>
+<div class="cat-section-title">Business</div>
+<p class="cat-section-desc">For entrepreneurs and small businesses building from the ground up.</p>
+</div>
+</div>
+<div class="cat-toolkit-row is-coming-soon">
+<div class="cat-toolkit-row-left">
+<div class="cat-toolkit-row-icon cover-business">🏢</div>
+<div>
+<div class="cat-toolkit-row-name">Small Business Toolkit <span class="badge badge-muted" style="margin-left:8px; font-size:0.7rem;">Coming Soon</span></div>
+<div class="cat-toolkit-row-items">Invoice · Quotation · Proposal · Client Onboarding · Meeting Agenda</div>
+</div>
+</div>
+<div class="cat-toolkit-row-right">
+<a class="btn btn-outline btn-sm" href="contact.html">Get Notified</a>
+</div>
+</div>
+</div>
+<!-- Nonprofit -->
+<div class="cat-section" id="nonprofit">
+<div class="cat-section-header">
+<div class="cat-section-icon cover-ngo">🤝</div>
+<div>
+<div class="cat-section-title">Nonprofit</div>
+<p class="cat-section-desc">For NGOs, community organizations, and mission-driven teams.</p>
+</div>
+</div>
+<a class="cat-toolkit-row" href="toolkit-detail.html?id=ngo">
+<div class="cat-toolkit-row-left">
+<div class="cat-toolkit-row-icon cover-ngo">🤝</div>
+<div>
+<div class="cat-toolkit-row-name">NGO Sponsorship Toolkit</div>
+<div class="cat-toolkit-row-items">Sponsorship Letter · Proposal · Follow-Up Templates · Tracking Sheet · Recognition Framework</div>
+</div>
+</div>
+<div class="cat-toolkit-row-right">
+<div class="cat-toolkit-price">$19.99</div>
+<span class="btn btn-primary btn-sm">View →</span>
+</div>
+</a>
+<div class="cat-toolkit-row is-coming-soon">
+<div class="cat-toolkit-row-left">
+<div class="cat-toolkit-row-icon cover-board">🏛️</div>
+<div>
+<div class="cat-toolkit-row-name">Board Governance Toolkit <span class="badge badge-muted" style="margin-left:8px; font-size:0.7rem;">Coming Soon</span></div>
+<div class="cat-toolkit-row-items">Meeting Agenda · Minutes · Board Report · Committee Structure · Governance Checklist</div>
+</div>
+</div>
+<div class="cat-toolkit-row-right">
+<a class="btn btn-outline btn-sm" href="contact.html">Get Notified</a>
+</div>
+</div>
+</div>
+<!-- Consulting -->
+<div class="cat-section" id="consulting">
+<div class="cat-section-header">
+<div class="cat-section-icon cover-consultant">📊</div>
+<div>
+<div class="cat-section-title">Consulting</div>
+<p class="cat-section-desc">For independent consultants and service providers.</p>
+</div>
+</div>
+<a class="cat-toolkit-row" href="toolkit-detail.html?id=consultant">
+<div class="cat-toolkit-row-left">
+<div class="cat-toolkit-row-icon cover-consultant">📊</div>
+<div>
+<div class="cat-toolkit-row-name">Consultant Toolkit</div>
+<div class="cat-toolkit-row-items">Proposal · Scope of Work · Service Agreement · Client Intake · Discovery Questions</div>
+</div>
+</div>
+<div class="cat-toolkit-row-right">
+<div class="cat-toolkit-price">$24.99</div>
+<span class="btn btn-primary btn-sm">View →</span>
+</div>
+</a>
+</div>
+<!-- Founder -->
+<div class="cat-section" id="founder">
+<div class="cat-section-header">
+<div class="cat-section-icon cover-founder">🚀</div>
+<div>
+<div class="cat-section-title">Founder</div>
+<p class="cat-section-desc">For startups and early-stage businesses building their foundation.</p>
+</div>
+</div>
+<a class="cat-toolkit-row" href="toolkit-detail.html?id=founder">
+<div class="cat-toolkit-row-left">
+<div class="cat-toolkit-row-icon cover-founder">🚀</div>
+<div>
+<div class="cat-toolkit-row-name">Founder Toolkit</div>
+<div class="cat-toolkit-row-items">Business Summary · Business Plan · Pitch Deck · Partnership Proposal · Founder Checklist</div>
+</div>
+</div>
+<div class="cat-toolkit-row-right">
+<div class="cat-toolkit-price">$29.99</div>
+<span class="btn btn-primary btn-sm">View →</span>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- CTA -->
+<section class="section-sm" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+<div class="container">
+<div class="cta-banner">
+<h2 class="cta-banner-title">Ready to Get Started?</h2>
+<p class="cta-banner-subtitle">Browse all toolkits and find the one that fits your next step.</p>
+<div class="cta-banner-actions">
+<a class="btn btn-accent btn-lg" href="toolkits.html">Browse All Toolkits →</a>
+<a class="btn btn-ghost btn-lg" href="contact.html">Talk to an Advisor</a>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container">
+<div class="footer-top">
+<div>
+<div class="footer-brand-name">Forwardly</div>
+<div class="footer-brand-tagline">Professional Readiness Made Simple.</div>
+</div>
+<div>
+<div class="footer-col-title">Platform</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkits.html">All Toolkits</a>
+<a class="footer-link" href="categories.html">Categories</a>
+<a class="footer-link" href="about.html">About Forwardly</a>
+<a class="footer-link" href="contact.html">Contact</a>
+</div>
+</div>
+<div>
+<div class="footer-col-title">Toolkits</div>
+<div class="footer-links">
+<a class="footer-link" href="toolkit-detail.html?id=founder">Founder</a>
+<a class="footer-link" href="toolkit-detail.html?id=consultant">Consulting</a>
+<a class="footer-link" href="toolkit-detail.html?id=ngo">Nonprofit</a>
+<a class="footer-link" href="contact.html">Career <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+<a class="footer-link" href="contact.html">Small Business <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© 2026 Forwardly | Professional Readiness Made Simple.</div>
+</div>
+</div>
+</footer>
+<script src="../js/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat');
+  if (cat) {
+    const target = document.getElementById(cat);
+    if (target) setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+  }
+</script>
+</body>
+</html>
