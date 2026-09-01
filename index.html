@@ -11,108 +11,148 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="css/styles.css" rel="stylesheet"/>
 <style>
-    .featured-label {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-    }
-    .coming-soon-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(15,5,32,0.55);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 0;
-    }
-    .coming-soon-badge {
-      background: rgba(255,255,255,0.15);
-      border: 1.5px solid rgba(255,255,255,0.35);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 999px;
-    }
-    .toolkit-card.is-coming-soon {
-      opacity: 0.82;
-    }
-    .toolkit-card.is-coming-soon .toolkit-card-cover {
-      position: relative;
-    }
-    .cat-icon-career    { background: rgba(76,29,149,0.12); }
-    .cat-icon-business  { background: rgba(16,185,129,0.12); }
-    .cat-icon-nonprofit { background: rgba(245,158,11,0.12); }
-    .cat-icon-consulting{ background: rgba(59,130,246,0.12); }
-    .cat-icon-founder   { background: rgba(239,68,68,0.12); }
-    .cover-career    { background: linear-gradient(135deg, #4C1D95, #6D28D9); }
-    .cover-founder   { background: linear-gradient(135deg, #dc2626, #b91c1c); }
-    .cover-ngo       { background: linear-gradient(135deg, #d97706, #b45309); }
-    .cover-consultant{ background: linear-gradient(135deg, #2563eb, #1d4ed8); }
-    .cover-business  { background: linear-gradient(135deg, #059669, #047857); }
-    .cover-board     { background: linear-gradient(135deg, #0f172a, #1e293b); }
+  .featured-label { position: absolute; top: 16px; right: 16px; }
+  .coming-soon-overlay { position: absolute; inset: 0; background: rgba(15,5,32,0.55); display: flex; align-items: center; justify-content: center; }
+  .coming-soon-badge { background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.35); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: 999px; }
+  .toolkit-card.is-coming-soon { opacity: 0.82; }
+  .toolkit-card.is-coming-soon .toolkit-card-cover { position: relative; }
+  .cat-icon-career    { background: rgba(76,29,149,0.12); }
+  .cat-icon-business  { background: rgba(16,185,129,0.12); }
+  .cat-icon-nonprofit { background: rgba(245,158,11,0.12); }
+  .cat-icon-consulting{ background: rgba(59,130,246,0.12); }
+  .cat-icon-founder   { background: rgba(239,68,68,0.12); }
+  .cover-career    { background: linear-gradient(135deg, #4C1D95, #6D28D9); }
+  .cover-founder   { background: linear-gradient(135deg, #dc2626, #b91c1c); }
+  .cover-ngo       { background: linear-gradient(135deg, #d97706, #b45309); }
+  .cover-consultant{ background: linear-gradient(135deg, #2563eb, #1d4ed8); }
+  .cover-business  { background: linear-gradient(135deg, #059669, #047857); }
+  .cover-board     { background: linear-gradient(135deg, #0f172a, #1e293b); }
 
-    /* Advisor CTA block */
-    .advisor-block {
-      background: var(--color-bg-light);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-xl);
-      padding: 40px 28px;
-      text-align: center;
-    }
-    .advisor-block-eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--color-secondary);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 12px;
-    }
-    .advisor-block-title {
-      font-size: 1.375rem;
-      font-weight: 800;
-      color: var(--color-text);
-      letter-spacing: -0.02em;
-      margin-bottom: 10px;
-    }
-    .advisor-block-desc {
-      font-size: 0.9rem;
-      color: var(--color-text-muted);
-      max-width: 440px;
-      margin: 0 auto 24px;
-      line-height: 1.7;
-    }
+  /* Urgency banner */
+  .urgency-banner {
+    background: #1a0533;
+    border-bottom: 1px solid rgba(163,230,53,0.2);
+    padding: 10px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .urgency-banner-text { font-size: 0.8rem; color: rgba(255,255,255,0.85); font-weight: 500; }
+  .urgency-banner-highlight { color: var(--color-accent); font-weight: 700; }
 
-    /* Site-wide banner */
-    .site-banner {
-      background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
-      padding: 12px 20px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .site-banner-text {
-      font-size: 0.875rem;
-      color: rgba(255,255,255,0.92);
-      font-weight: 500;
-    }
-    .site-banner .btn {
-      padding: 7px 18px;
-      font-size: 0.78rem;
-    }
+  /* Site banner */
+  .site-banner { background: linear-gradient(90deg, var(--color-primary), var(--color-secondary)); padding: 11px 20px; text-align: center; display: flex; align-items: center; justify-content: center; gap: 16px; flex-wrap: wrap; }
+  .site-banner-text { font-size: 0.8rem; color: rgba(255,255,255,0.9); font-weight: 500; }
+  .site-banner .btn { padding: 6px 16px; font-size: 0.75rem; }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  /* Trust badges inline */
+  .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+  }
+  .trust-badge-icon { color: var(--color-accent); font-size: 13px; }
+
+  /* Guarantee block */
+  .guarantee-strip {
+    background: rgba(163,230,53,0.08);
+    border: 1px solid rgba(163,230,53,0.2);
+    border-radius: var(--radius-lg);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  .guarantee-icon { font-size: 28px; flex-shrink: 0; }
+  .guarantee-title { font-size: 0.875rem; font-weight: 700; color: var(--color-text); margin-bottom: 2px; }
+  .guarantee-desc { font-size: 0.78rem; color: var(--color-text-muted); margin: 0; }
+
+  /* Bundle card */
+  .bundle-card {
+    background: linear-gradient(135deg, var(--color-primary), #3b0764);
+    border-radius: var(--radius-xl);
+    padding: 32px 24px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+  .bundle-card::before {
+    content: '';
+    position: absolute;
+    top: -30%; right: -10%;
+    width: 250px; height: 250px;
+    background: radial-gradient(circle, rgba(163,230,53,0.12) 0%, transparent 70%);
+  }
+  .bundle-card-label { font-size: 0.7rem; font-weight: 700; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; position: relative; }
+  .bundle-card-title { font-size: 1.375rem; font-weight: 800; color: #fff; margin-bottom: 8px; position: relative; letter-spacing: -0.02em; }
+  .bundle-card-desc { font-size: 0.875rem; color: rgba(255,255,255,0.7); margin-bottom: 20px; position: relative; line-height: 1.6; }
+  .bundle-card-items { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; position: relative; }
+  .bundle-item-tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); font-size: 0.72rem; font-weight: 500; padding: 3px 10px; border-radius: 999px; }
+  .bundle-pricing { display: flex; align-items: baseline; gap: 10px; margin-bottom: 20px; position: relative; }
+  .bundle-price-new { font-size: 2rem; font-weight: 800; color: var(--color-accent); line-height: 1; }
+  .bundle-price-old { font-size: 1rem; color: rgba(255,255,255,0.45); text-decoration: line-through; }
+  .bundle-savings { font-size: 0.75rem; background: rgba(163,230,53,0.2); color: var(--color-accent); padding: 3px 10px; border-radius: 999px; font-weight: 700; }
+
+  /* Email capture */
+  .email-capture {
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 40px 28px;
+    text-align: center;
+  }
+  .email-capture-title { font-size: 1.375rem; font-weight: 800; color: var(--color-text); letter-spacing: -0.02em; margin-bottom: 8px; }
+  .email-capture-desc { font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 24px; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+  .email-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto 12px; flex-wrap: wrap; }
+  .email-input { flex: 1; min-width: 200px; padding: 12px 16px; border: 1.5px solid var(--color-border); border-radius: var(--radius-full); font-size: 0.875rem; color: var(--color-text); background: var(--color-bg); outline: none; font-family: inherit; }
+  .email-input:focus { border-color: var(--color-secondary); box-shadow: 0 0 0 3px rgba(109,40,217,0.1); }
+  .email-note { font-size: 0.72rem; color: var(--color-text-muted); }
+
+  /* Advisor block */
+  .advisor-block { background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 40px 28px; text-align: center; }
+  .advisor-block-title { font-size: 1.375rem; font-weight: 800; color: var(--color-text); letter-spacing: -0.02em; margin-bottom: 10px; }
+  .advisor-block-desc { font-size: 0.9rem; color: var(--color-text-muted); max-width: 440px; margin: 0 auto 24px; line-height: 1.7; }
+
+  /* Purchase trust row */
+  .purchase-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .purchase-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+  .purchase-trust-item span { color: #16a34a; }
+
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+</style>
 </head>
 <body>
+<!-- URGENCY BANNER -->
+<div class="urgency-banner">
+<span class="urgency-banner-text">Introductory pricing active. <span class="urgency-banner-highlight">Save up to 40%</span> on all toolkits while it lasts.</span>
+</div>
 <!-- SITE BANNER -->
 <div class="site-banner">
 <span class="site-banner-text">Still have questions? Speak with a real advisor and get personalized guidance.</span>
@@ -123,9 +163,8 @@
 <div class="container">
 <div class="nav-inner">
 <a class="nav-logo" href="index.html">
-<div class="nav-logo-mark">F</div>
-        Forwardly
-      </a>
+<div class="nav-logo-mark">F</div>Forwardly
+</a>
 <div class="nav-links">
 <a class="nav-link active" href="index.html">Home</a>
 <a class="nav-link" href="pages/toolkits.html">Toolkits</a>
@@ -158,80 +197,63 @@
 <div class="container">
 <div class="hero-content">
 <h1 class="hero-title">
-        Professional Readiness<br/><span>Made Simple</span>
+    Look Professional.<br/><span>Start Today.</span>
 </h1>
 <p class="hero-subtitle">
-        Practical toolkits, templates, frameworks, and guides for individuals, businesses, nonprofits, and founders.
-      </p>
+    Ready-to-use toolkits for founders, consultants, nonprofits, and professionals. Buy once, download instantly, use immediately.
+  </p>
 <div class="hero-actions">
 <a class="btn btn-accent btn-lg" href="pages/toolkits.html">Get Instant Access</a>
 <a class="btn btn-ghost btn-lg" href="pages/about.html">Our Mission</a>
 </div>
+<div class="trust-badges">
+<div class="trust-badge"><span class="trust-badge-icon">⚡</span> Instant Download</div>
+<div class="trust-badge"><span class="trust-badge-icon">✓</span> Lifetime Access</div>
+<div class="trust-badge"><span class="trust-badge-icon">🔒</span> Secure Checkout</div>
+<div class="trust-badge"><span class="trust-badge-icon">↩</span> 7-Day Guarantee</div>
+<div class="trust-badge"><span class="trust-badge-icon">✦</span> No Subscription</div>
+</div>
 <div class="hero-stats">
-<div class="hero-stat">
-<div class="hero-stat-number">6</div>
-<div class="hero-stat-label">Toolkits</div>
-</div>
-<div class="hero-stat">
-<div class="hero-stat-number">30+</div>
-<div class="hero-stat-label">Templates</div>
-</div>
-<div class="hero-stat">
-<div class="hero-stat-number">5</div>
-<div class="hero-stat-label">Categories</div>
-</div>
-<div class="hero-stat">
-<div class="hero-stat-number">$9</div>
-<div class="hero-stat-label">Starts At</div>
-</div>
+<div class="hero-stat"><div class="hero-stat-number">6</div><div class="hero-stat-label">Toolkits</div></div>
+<div class="hero-stat"><div class="hero-stat-number">30+</div><div class="hero-stat-label">Templates</div></div>
+<div class="hero-stat"><div class="hero-stat-number">5</div><div class="hero-stat-label">Categories</div></div>
+<div class="hero-stat"><div class="hero-stat-number">$9</div><div class="hero-stat-label">Starts At</div></div>
 </div>
 </div>
 </div>
 </section>
-<!-- TRUST BAR -->
-<div class="trust-bar">
-<div class="container">
-<div class="trust-items">
-<div class="trust-item"><span class="trust-icon">⚡</span> Instant Download</div>
-<div class="trust-item"><span class="trust-icon">✦</span> Ready to Use</div>
-<div class="trust-item"><span class="trust-icon">🔒</span> Secure Checkout</div>
-<div class="trust-item"><span class="trust-icon">📱</span> Mobile Friendly</div>
-<div class="trust-item"><span class="trust-icon">✓</span> Real-World Tested</div>
-</div>
-</div>
-</div>
 <!-- CATEGORIES -->
 <section class="section" style="background: var(--color-bg-light);">
 <div class="container">
 <div class="section-header">
-<h2 class="section-title">Find What You Need</h2>
-<p class="section-subtitle">Toolkits built for the real challenges professionals and organizations face every day.</p>
+<h2 class="section-title">What Do You Need Today?</h2>
+<p class="section-subtitle">Choose your situation and get the right toolkit immediately.</p>
 </div>
 <div class="categories-grid">
-<a class="category-card" href="pages/categories.html?cat=career">
+<a class="category-card" href="pages/toolkit-detail.html?id=career">
 <div class="category-icon cat-icon-career">💼</div>
 <div class="category-name">Career</div>
-<div class="category-desc">For job seekers &amp; professionals</div>
+<div class="category-desc">Land your next role</div>
 </a>
-<a class="category-card" href="pages/categories.html?cat=business">
+<a class="category-card" href="pages/toolkit-detail.html?id=business">
 <div class="category-icon cat-icon-business">🏢</div>
 <div class="category-name">Business</div>
-<div class="category-desc">For entrepreneurs &amp; small businesses</div>
+<div class="category-desc">Run like a pro</div>
 </a>
-<a class="category-card" href="pages/categories.html?cat=nonprofit">
+<a class="category-card" href="pages/toolkit-detail.html?id=ngo">
 <div class="category-icon cat-icon-nonprofit">🤝</div>
 <div class="category-name">Nonprofit</div>
-<div class="category-desc">For NGOs &amp; community orgs</div>
+<div class="category-desc">Secure funding</div>
 </a>
-<a class="category-card" href="pages/categories.html?cat=consulting">
+<a class="category-card" href="pages/toolkit-detail.html?id=consultant">
 <div class="category-icon cat-icon-consulting">📊</div>
 <div class="category-name">Consulting</div>
-<div class="category-desc">For consultants &amp; service providers</div>
+<div class="category-desc">Win more clients</div>
 </a>
-<a class="category-card" href="pages/categories.html?cat=founder">
+<a class="category-card" href="pages/toolkit-detail.html?id=founder">
 <div class="category-icon cat-icon-founder">🚀</div>
 <div class="category-name">Founder</div>
-<div class="category-desc">For startups &amp; early-stage businesses</div>
+<div class="category-desc">Launch with confidence</div>
 </a>
 </div>
 </div>
@@ -240,22 +262,20 @@
 <section class="section">
 <div class="container">
 <div class="section-header">
-<h2 class="section-title">Start with the Essentials</h2>
-<p class="section-subtitle">Each toolkit is built from real-world experience: ready to download and use immediately.</p>
+<h2 class="section-title">Available Now</h2>
+<p class="section-subtitle">Built from real-world experience. Download and use in under 5 minutes.</p>
 </div>
 <div class="toolkits-grid">
 <!-- Founder Toolkit: LIVE -->
 <div class="toolkit-card" data-category="founder">
 <div class="toolkit-card-cover cover-founder">
 <span class="toolkit-card-cover-icon">🚀</span>
-<span class="badge badge-accent featured-label">New</span>
+<span class="badge badge-accent featured-label">Introductory Price</span>
 </div>
 <div class="toolkit-card-body">
-<div class="toolkit-card-meta">
-<span class="badge badge-primary">Founder</span>
-</div>
+<div class="toolkit-card-meta"><span class="badge badge-primary">Founder</span></div>
 <h3 class="toolkit-card-title">Founder Toolkit</h3>
-<p class="toolkit-card-desc">Launch with confidence. A complete starter pack for early-stage founders building their first venture.</p>
+<p class="toolkit-card-desc">Launch with confidence. Everything an early-stage founder needs to communicate their vision and attract partners.</p>
 <div class="toolkit-card-includes">
 <div class="toolkit-card-includes-title">What's Included</div>
 <div class="toolkit-card-includes-list">
@@ -269,7 +289,7 @@
 <div class="toolkit-card-footer">
 <div>
 <div class="toolkit-price">$29.99</div>
-<div class="toolkit-price-sub">One-time purchase</div>
+<div class="toolkit-price-sub">One-time · Instant download</div>
 </div>
 <a class="btn btn-primary btn-sm" href="pages/toolkit-detail.html?id=founder">Get This Toolkit</a>
 </div>
@@ -281,11 +301,9 @@
 <span class="toolkit-card-cover-icon">📊</span>
 </div>
 <div class="toolkit-card-body">
-<div class="toolkit-card-meta">
-<span class="badge badge-primary">Consulting</span>
-</div>
+<div class="toolkit-card-meta"><span class="badge badge-primary">Consulting</span></div>
 <h3 class="toolkit-card-title">Consultant Toolkit</h3>
-<p class="toolkit-card-desc">Win clients and deliver professionally. Everything a consultant needs to operate at a high level.</p>
+<p class="toolkit-card-desc">Win clients and deliver professionally. The documents every consultant needs to operate at a high level.</p>
 <div class="toolkit-card-includes">
 <div class="toolkit-card-includes-title">What's Included</div>
 <div class="toolkit-card-includes-list">
@@ -299,7 +317,7 @@
 <div class="toolkit-card-footer">
 <div>
 <div class="toolkit-price">$24.99</div>
-<div class="toolkit-price-sub">One-time purchase</div>
+<div class="toolkit-price-sub">One-time · Instant download</div>
 </div>
 <a class="btn btn-primary btn-sm" href="pages/toolkit-detail.html?id=consultant">Get This Toolkit</a>
 </div>
@@ -311,9 +329,7 @@
 <span class="toolkit-card-cover-icon">🤝</span>
 </div>
 <div class="toolkit-card-body">
-<div class="toolkit-card-meta">
-<span class="badge badge-primary">Nonprofit</span>
-</div>
+<div class="toolkit-card-meta"><span class="badge badge-primary">Nonprofit</span></div>
 <h3 class="toolkit-card-title">NGO Sponsorship Toolkit</h3>
 <p class="toolkit-card-desc">Secure funding and partnerships with professional sponsorship documents built for nonprofits.</p>
 <div class="toolkit-card-includes">
@@ -329,7 +345,7 @@
 <div class="toolkit-card-footer">
 <div>
 <div class="toolkit-price">$19.99</div>
-<div class="toolkit-price-sub">One-time purchase</div>
+<div class="toolkit-price-sub">One-time · Instant download</div>
 </div>
 <a class="btn btn-primary btn-sm" href="pages/toolkit-detail.html?id=ngo">Get This Toolkit</a>
 </div>
@@ -342,10 +358,7 @@
 <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
 </div>
 <div class="toolkit-card-body">
-<div class="toolkit-card-meta">
-<span class="badge badge-primary">Career</span>
-<span class="badge badge-muted">Coming Soon</span>
-</div>
+<div class="toolkit-card-meta"><span class="badge badge-primary">Career</span><span class="badge badge-muted">Coming Soon</span></div>
 <h3 class="toolkit-card-title">Career Toolkit</h3>
 <p class="toolkit-card-desc">Everything you need to land your next role: from a standout resume to a polished LinkedIn profile.</p>
 <div class="toolkit-card-includes">
@@ -359,10 +372,7 @@
 </div>
 </div>
 <div class="toolkit-card-footer">
-<div>
-<div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div>
-<div class="toolkit-price-sub">Notify me when available</div>
-</div>
+<div><div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div><div class="toolkit-price-sub">Notify me when available</div></div>
 <a class="btn btn-outline btn-sm" href="pages/contact.html">Get Notified</a>
 </div>
 </div>
@@ -374,10 +384,7 @@
 <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
 </div>
 <div class="toolkit-card-body">
-<div class="toolkit-card-meta">
-<span class="badge badge-primary">Business</span>
-<span class="badge badge-muted">Coming Soon</span>
-</div>
+<div class="toolkit-card-meta"><span class="badge badge-primary">Business</span><span class="badge badge-muted">Coming Soon</span></div>
 <h3 class="toolkit-card-title">Small Business Toolkit</h3>
 <p class="toolkit-card-desc">Run your business like a pro. Client-ready documents that make you look established from day one.</p>
 <div class="toolkit-card-includes">
@@ -391,10 +398,7 @@
 </div>
 </div>
 <div class="toolkit-card-footer">
-<div>
-<div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div>
-<div class="toolkit-price-sub">Notify me when available</div>
-</div>
+<div><div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div><div class="toolkit-price-sub">Notify me when available</div></div>
 <a class="btn btn-outline btn-sm" href="pages/contact.html">Get Notified</a>
 </div>
 </div>
@@ -406,10 +410,7 @@
 <div class="coming-soon-overlay"><span class="coming-soon-badge">Coming Soon</span></div>
 </div>
 <div class="toolkit-card-body">
-<div class="toolkit-card-meta">
-<span class="badge badge-primary">Governance</span>
-<span class="badge badge-muted">Coming Soon</span>
-</div>
+<div class="toolkit-card-meta"><span class="badge badge-primary">Governance</span><span class="badge badge-muted">Coming Soon</span></div>
 <h3 class="toolkit-card-title">Board Governance Toolkit</h3>
 <p class="toolkit-card-desc">Structure your board for success. Professional governance documents for organizations of any size.</p>
 <div class="toolkit-card-includes">
@@ -423,10 +424,7 @@
 </div>
 </div>
 <div class="toolkit-card-footer">
-<div>
-<div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div>
-<div class="toolkit-price-sub">Notify me when available</div>
-</div>
+<div><div class="toolkit-price" style="color:var(--color-text-muted); font-size:1rem;">Coming Soon</div><div class="toolkit-price-sub">Notify me when available</div></div>
 <a class="btn btn-outline btn-sm" href="pages/contact.html">Get Notified</a>
 </div>
 </div>
@@ -437,22 +435,53 @@
 </div>
 </div>
 </section>
-<!-- ADVISOR CTA -->
-<section class="section-sm" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+<!-- BUNDLE SECTION -->
+<section class="section" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border);">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Better Together</h2>
+<p class="section-subtitle">Get more for less. Bundles combine the most-used toolkits at a significant discount.</p>
+</div>
+<div style="display: grid; grid-template-columns: 1fr; gap: 20px; max-width: 900px; margin: 0 auto;">
+<!-- Startup Bundle -->
+<div class="bundle-card">
+<div class="bundle-card-label">Most Popular Bundle</div>
+<h3 class="bundle-card-title">Startup Bundle</h3>
+<p class="bundle-card-desc">Everything a founder needs to launch, pitch, and operate professionally from day one.</p>
+<div class="bundle-card-items">
+<span class="bundle-item-tag">Founder Toolkit</span>
+<span class="bundle-item-tag">Consultant Toolkit</span>
+<span class="bundle-item-tag">NGO Sponsorship Toolkit</span>
+</div>
+<div class="bundle-pricing">
+<div class="bundle-price-new">$59.99</div>
+<div class="bundle-price-old">$84.97</div>
+<div class="bundle-savings">Save $25</div>
+</div>
+<a class="btn btn-accent btn-lg" href="pages/contact.html" style="position:relative;">Get the Bundle</a>
+</div>
+</div>
+<p style="text-align:center; font-size:0.8rem; color:var(--color-text-muted); margin-top:16px;">More bundles coming soon. <a href="pages/contact.html" style="color:var(--color-primary); font-weight:600;">Contact us</a> for custom bundle pricing.</p>
+</div>
+</section>
+<!-- GUARANTEE -->
+<section class="section-sm" style="border-top: 1px solid var(--color-border);">
 <div class="container" style="max-width: 640px;">
-<div class="advisor-block">
-<h2 class="advisor-block-title">Talk to a Real Advisor</h2>
-<p class="advisor-block-desc">Have questions or need personalized guidance? Talk to a real advisor and get practical support tailored to your situation.</p>
-<a class="btn btn-primary btn-lg" href="pages/contact.html">Talk to an Advisor →</a>
+<div class="guarantee-strip" style="background: rgba(163,230,53,0.06); border: 1px solid rgba(163,230,53,0.2); border-radius: var(--radius-xl); padding: 28px 24px; display:flex; align-items:flex-start; gap:16px;">
+<div style="font-size:36px; flex-shrink:0;">🛡️</div>
+<div>
+<div style="font-size:1rem; font-weight:800; color:var(--color-text); margin-bottom:6px;">7-Day Satisfaction Guarantee</div>
+<p style="font-size:0.875rem; color:var(--color-text-muted); margin:0; line-height:1.7;">If you're not satisfied within 7 days of purchase, contact us and we'll make it right. No complicated process, no questions asked.</p>
+</div>
 </div>
 </div>
 </section>
 <!-- HOW IT WORKS -->
-<section class="section">
+<section class="section" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border);">
 <div class="container">
 <div class="section-header">
 <h2 class="section-title">Ready in Under 5 Minutes</h2>
-<p class="section-subtitle">No subscriptions. No complexity. Just find what you need and get to work.</p>
+<p class="section-subtitle">No subscriptions. No complexity. Buy it, download it, use it.</p>
 </div>
 <div style="max-width: 480px; margin: 0 auto;">
 <div class="steps-list">
@@ -460,43 +489,75 @@
 <div class="step-number">1</div>
 <div class="step-content">
 <div class="step-title">Find Your Toolkit</div>
-<div class="step-desc">Find the toolkit that matches your goal: career, business, nonprofit, or more.</div>
+<div class="step-desc">Choose the toolkit that matches your goal.</div>
 </div>
 </div>
 <div class="step-item">
 <div class="step-number">2</div>
 <div class="step-content">
 <div class="step-title">Purchase Securely</div>
-<div class="step-desc">Simple one-time payment. No subscriptions, no hidden fees.</div>
+<div class="step-desc">One-time payment. No subscriptions, no hidden fees.</div>
 </div>
 </div>
 <div class="step-item">
 <div class="step-number">3</div>
 <div class="step-content">
 <div class="step-title">Download Instantly</div>
-<div class="step-desc">Get immediate access to all templates and resources in your toolkit.</div>
+<div class="step-desc">Immediate access to all templates and resources.</div>
 </div>
 </div>
 <div class="step-item">
 <div class="step-number">4</div>
 <div class="step-content">
 <div class="step-title">Start Using It</div>
-<div class="step-desc">Open, customize, and use. Everything is ready to go: no setup required.</div>
+<div class="step-desc">Open, customize, and use. No setup required.</div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<!-- CTA BANNER -->
+<!-- EMAIL CAPTURE -->
+<section class="section" style="border-top: 1px solid var(--color-border);">
+<div class="container" style="max-width: 600px;">
+<div class="email-capture">
+<div style="font-size:32px; margin-bottom:12px;">📬</div>
+<h2 class="email-capture-title">Not Ready to Buy Yet?</h2>
+<p class="email-capture-desc">Join our resource list and get practical tips, free guides, and early access to new toolkits before they launch.</p>
+<form class="email-form" id="emailCaptureForm" onsubmit="handleEmailCapture(event)">
+<input class="email-input" placeholder="Your email address" required="" type="email"/>
+<button class="btn btn-primary" type="submit">Get Free Resources</button>
+</form>
+<p class="email-note">No spam. Unsubscribe anytime. We send useful things only.</p>
+</div>
+</div>
+</section>
+<!-- ADVISOR CTA -->
+<section class="section-sm" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+<div class="container" style="max-width: 640px;">
+<div class="advisor-block">
+<h2 class="advisor-block-title">Need a Little More Help?</h2>
+<p class="advisor-block-desc">Have questions or need personalized guidance? Talk to a real advisor and get practical support tailored to your situation.</p>
+<a class="btn btn-primary btn-lg" href="pages/contact.html">Talk to an Advisor</a>
+</div>
+</div>
+</section>
+<!-- FINAL CTA BANNER -->
 <section class="section">
 <div class="container">
 <div class="cta-banner">
-<h2 class="cta-banner-title">Ready to Look Professional?</h2>
-<p class="cta-banner-subtitle">Join professionals who use Forwardly to get ready for what's next.</p>
+<h2 class="cta-banner-title">Your Next Step Starts Here.</h2>
+<p class="cta-banner-subtitle">Professional toolkits. Instant access. Real results.</p>
 <div class="cta-banner-actions">
 <a class="btn btn-accent btn-lg" href="pages/toolkits.html">Get Instant Access</a>
 <a class="btn btn-ghost btn-lg" href="pages/about.html">Our Mission</a>
+</div>
+<div class="purchase-trust-row" style="margin-top:20px;">
+<div class="purchase-trust-item"><span>✓</span> Secure Checkout</div>
+<div class="purchase-trust-item"><span>✓</span> Instant Download</div>
+<div class="purchase-trust-item"><span>✓</span> Lifetime Access</div>
+<div class="purchase-trust-item"><span>✓</span> No Subscription</div>
+<div class="purchase-trust-item"><span>✓</span> 7-Day Guarantee</div>
 </div>
 </div>
 </div>
@@ -508,9 +569,7 @@
 <div>
 <div class="footer-brand-name">Forwardly</div>
 <div class="footer-brand-tagline">Professional Readiness Made Simple.</div>
-<p style="font-size: 0.8rem; color: rgba(255,255,255,0.35); max-width: 260px; line-height: 1.6;">
-          Practical toolkits and templates built from real-world experience.
-        </p>
+<p style="font-size: 0.8rem; color: rgba(255,255,255,0.35); max-width: 260px; line-height: 1.6; margin-top:8px;">Practical toolkits and templates built from real-world experience.</p>
 </div>
 <div>
 <div class="footer-col-title">Platform</div>
@@ -538,5 +597,23 @@
 </div>
 </footer>
 <script src="js/main.js"></script>
+<script>
+function handleEmailCapture(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const input = e.target.querySelector('input');
+  btn.textContent = 'You\'re in!';
+  btn.style.background = '#16a34a';
+  btn.disabled = true;
+  input.disabled = true;
+  setTimeout(() => {
+    btn.textContent = 'Get Free Resources';
+    btn.style.background = '';
+    btn.disabled = false;
+    input.disabled = false;
+    input.value = '';
+  }, 4000);
+}
+</script>
 </body>
 </html>

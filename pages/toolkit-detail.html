@@ -305,8 +305,14 @@ const TOOLKITS = {
   career: {
     id: 'career', title: 'Career Toolkit', category: 'Career', emoji: '💼',
     coverClass: 'cover-career', price: '$14.99', badge: 'Coming Soon',
-    description: 'Everything you need to land your next role. Whether you\'re entering the job market for the first time or making a career pivot, this toolkit gives you the professional documents that get you noticed: and hired.',
+    outcome: 'Get noticed, get interviews, get hired.',
+    description: 'Everything you need to land your next role. Whether you\'re entering the job market for the first time or making a career pivot, this toolkit gives you the professional documents that get you noticed and hired.',
     problem: 'Most job seekers lose opportunities not because of lack of skill, but because their documents don\'t reflect their value. This toolkit fixes that.',
+    whoFor: ['Job seekers entering the market for the first time', 'Professionals making a career change', 'Anyone who wants to look more polished and credible'],
+    faqs: [
+      { q: 'Are these templates editable?', a: 'Yes. All templates are fully editable in Word and Google Docs.' },
+      { q: 'How quickly can I use these?', a: 'Most users have a complete resume ready within 30 minutes of downloading.' },
+    ],
     includes: [
       { name: 'Resume Template', desc: 'Clean, ATS-friendly format that highlights your experience and skills.' },
       { name: 'Cover Letter Template', desc: 'Customizable letter structure that opens doors and gets interviews.' },
@@ -318,8 +324,15 @@ const TOOLKITS = {
   founder: {
     id: 'founder', title: 'Founder Toolkit', category: 'Founder', emoji: '🚀',
     coverClass: 'cover-founder', price: '$29.99', badge: 'New',
+    outcome: 'Launch professionally. Attract partners. Build credibility from day one.',
     description: 'Launch with confidence. This toolkit gives early-stage founders the professional documents they need to communicate their vision, attract partners, and build credibility from day one.',
     problem: 'Founders often have great ideas but struggle to present them professionally. This toolkit bridges that gap.',
+    whoFor: ['First-time founders building their initial venture', 'Entrepreneurs seeking investors or co-founders', 'Anyone who needs to present their business idea professionally'],
+    faqs: [
+      { q: 'Do I need business experience to use this?', a: 'No. The templates are designed to guide you through each section with clear prompts.' },
+      { q: 'Can I use these to approach investors?', a: 'Yes. The Business Summary and Pitch Deck Structure are built specifically for investor conversations.' },
+      { q: 'Are the files editable?', a: 'Fully editable in Word, Google Docs, and PowerPoint.' },
+    ],
     includes: [
       { name: 'One Page Business Summary', desc: 'A concise overview of your business for investors and partners.' },
       { name: 'Business Plan Framework', desc: 'Structured template covering all key sections of a solid business plan.' },
@@ -331,8 +344,15 @@ const TOOLKITS = {
   ngo: {
     id: 'ngo', title: 'NGO Sponsorship Toolkit', category: 'Nonprofit', emoji: '🤝',
     coverClass: 'cover-ngo', price: '$19.99', badge: null,
+    outcome: 'Secure sponsors. Fund your mission. Look credible from the first outreach.',
     description: 'Secure the funding your organization needs. This toolkit provides nonprofits and community organizations with professional sponsorship documents that build credibility and win corporate and individual sponsors.',
     problem: 'Many NGOs lose funding opportunities because their outreach materials don\'t look professional. This toolkit changes that.',
+    whoFor: ['Nonprofit directors and fundraising teams', 'Community organizations seeking corporate sponsors', 'NGOs preparing for their first sponsorship campaign'],
+    faqs: [
+      { q: 'Can I customize these for my organization?', a: 'Yes. Every document is fully editable and designed to be personalized with your organization\'s details.' },
+      { q: 'Does this include email templates?', a: 'Yes. The Follow-Up Templates include both email and letter formats.' },
+      { q: 'Is the tracking sheet a spreadsheet?', a: 'Yes. It\'s a ready-to-use spreadsheet for managing your sponsor pipeline.' },
+    ],
     includes: [
       { name: 'Sponsorship Letter', desc: 'Compelling outreach letter that clearly communicates your mission and ask.' },
       { name: 'Sponsorship Proposal', desc: 'Full proposal document with tiers, benefits, and impact metrics.' },
@@ -344,8 +364,15 @@ const TOOLKITS = {
   consultant: {
     id: 'consultant', title: 'Consultant Toolkit', category: 'Consulting', emoji: '📊',
     coverClass: 'cover-consultant', price: '$24.99', badge: null,
+    outcome: 'Win more clients. Protect your work. Get paid on time.',
     description: 'Win clients and deliver professionally. This toolkit gives independent consultants and service providers the documents they need to look established, protect their work, and operate at a high level.',
     problem: 'Consultants often lose clients or face scope creep because they lack professional agreements and processes. This toolkit solves that.',
+    whoFor: ['Independent consultants and freelancers', 'Service providers starting or growing their practice', 'Anyone who wants to look more established and protect their work'],
+    faqs: [
+      { q: 'Is the Service Agreement legally binding?', a: 'The template provides a professional framework. We recommend having a local attorney review it for your jurisdiction.' },
+      { q: 'Can I use these for multiple clients?', a: 'Yes. Once purchased, you can use and customize the templates for as many clients as you need.' },
+      { q: 'What format are the files in?', a: 'Word and Google Docs compatible. Fully editable.' },
+    ],
     includes: [
       { name: 'Proposal Template', desc: 'Structured proposal that clearly outlines your approach, timeline, and fees.' },
       { name: 'Scope of Work', desc: 'Detailed SOW template that defines deliverables and prevents scope creep.' },
@@ -357,8 +384,14 @@ const TOOLKITS = {
   business: {
     id: 'business', title: 'Small Business Toolkit', category: 'Business', emoji: '🏢',
     coverClass: 'cover-business', price: '$19.99', badge: null,
+    outcome: 'Look established. Get paid faster. Impress clients from day one.',
     description: 'Run your business like a pro from day one. This toolkit gives small business owners the client-facing documents they need to look established, get paid on time, and operate professionally.',
     problem: 'Small businesses often lose clients or face payment delays because they lack professional documentation. This toolkit fixes that.',
+    whoFor: ['Small business owners and sole traders', 'Service-based businesses working with clients', 'Anyone who wants to look more professional and get paid on time'],
+    faqs: [
+      { q: 'Can I brand these with my logo?', a: 'Yes. All templates are fully editable so you can add your logo, colors, and business details.' },
+      { q: 'What format are the files in?', a: 'Word and Google Docs compatible. The invoice and quotation also work in Excel and Google Sheets.' },
+    ],
     includes: [
       { name: 'Invoice Template', desc: 'Clean, professional invoice that gets you paid faster.' },
       { name: 'Quotation Template', desc: 'Formal quote document for presenting pricing to potential clients.' },
@@ -370,8 +403,14 @@ const TOOLKITS = {
   board: {
     id: 'board', title: 'Board Governance Toolkit', category: 'Governance', emoji: '🏛️',
     coverClass: 'cover-board', price: '$39.99', badge: 'Coming Soon',
+    outcome: 'Run effective meetings. Maintain accountability. Govern with confidence.',
     description: 'Structure your board for success. This toolkit provides organizations with the governance documents they need to run effective board meetings, maintain accountability, and operate with transparency.',
     problem: 'Many organizations struggle with board effectiveness because they lack proper governance structures. This toolkit provides the framework.',
+    whoFor: ['Nonprofit boards and executive directors', 'Organizations establishing or restructuring their board', 'Leaders who want to improve board accountability and effectiveness'],
+    faqs: [
+      { q: 'Is this suitable for small organizations?', a: 'Yes. The toolkit is designed to scale from small community organizations to larger nonprofits.' },
+      { q: 'Can I adapt these for my organization\'s specific needs?', a: 'Absolutely. All documents are fully editable.' },
+    ],
     includes: [
       { name: 'Meeting Agenda Template', desc: 'Structured agenda format for productive and focused board meetings.' },
       { name: 'Minutes Template', desc: 'Professional minutes document for recording decisions and action items.' },
@@ -409,20 +448,30 @@ function renderDetail() {
   ` : `
     <div class="purchase-price">${tk.price}</div>
     <div class="purchase-price-note">One-time purchase · Instant download</div>
+    <button class="btn btn-primary btn-full btn-lg btn-purchase" style="margin-bottom:10px;">
+      Get This Toolkit — ${tk.price}
+    </button>
+    <div style="display:flex; flex-wrap:wrap; gap:4px 12px; justify-content:center; margin-bottom:16px;">
+      <span style="font-size:0.7rem; color:var(--color-text-muted); display:flex; align-items:center; gap:3px;"><span style="color:#16a34a;">✓</span> Secure Checkout</span>
+      <span style="font-size:0.7rem; color:var(--color-text-muted); display:flex; align-items:center; gap:3px;"><span style="color:#16a34a;">✓</span> Instant Download</span>
+      <span style="font-size:0.7rem; color:var(--color-text-muted); display:flex; align-items:center; gap:3px;"><span style="color:#16a34a;">✓</span> Lifetime Access</span>
+      <span style="font-size:0.7rem; color:var(--color-text-muted); display:flex; align-items:center; gap:3px;"><span style="color:#16a34a;">✓</span> No Subscription</span>
+    </div>
+    <div style="background:rgba(163,230,53,0.07); border:1px solid rgba(163,230,53,0.2); border-radius:10px; padding:12px 14px; display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+      <span style="font-size:20px; flex-shrink:0;">🛡️</span>
+      <div>
+        <div style="font-size:0.78rem; font-weight:700; color:var(--color-text); margin-bottom:2px;">7-Day Satisfaction Guarantee</div>
+        <div style="font-size:0.72rem; color:var(--color-text-muted);">Not satisfied? Contact us within 7 days and we'll make it right.</div>
+      </div>
+    </div>
     <div class="purchase-features">
       <div class="purchase-feature"><span class="purchase-feature-icon">⚡</span> Instant download after purchase</div>
       <div class="purchase-feature"><span class="purchase-feature-icon">📁</span> All files included</div>
       <div class="purchase-feature"><span class="purchase-feature-icon">✏️</span> Fully editable templates</div>
-      <div class="purchase-feature"><span class="purchase-feature-icon">📱</span> Works on mobile & desktop</div>
-      <div class="purchase-feature"><span class="purchase-feature-icon">🔒</span> Secure checkout</div>
+      <div class="purchase-feature"><span class="purchase-feature-icon">📱</span> Works on mobile &amp; desktop</div>
+      <div class="purchase-feature"><span class="purchase-feature-icon">♾️</span> Free updates included</div>
     </div>
-    <button class="btn btn-primary btn-full btn-lg btn-purchase" style="margin-bottom:12px;">
-      Get This Toolkit: ${tk.price}
-    </button>
-    <p style="font-size:0.75rem; color:var(--color-text-muted); text-align:center; margin:0;">
-      Secure payment · No subscription required
-    </p>
-    <div style="border-top:1px solid var(--color-border); margin-top:20px; padding-top:16px; text-align:center;">
+    <div style="border-top:1px solid var(--color-border); margin-top:16px; padding-top:16px; text-align:center;">
       <p style="font-size:0.8rem; color:var(--color-text-muted); margin-bottom:10px;">Need guidance applying this toolkit?</p>
       <a href="contact.html" class="btn btn-outline btn-full btn-sm">Talk to an Advisor</a>
     </div>
@@ -433,12 +482,13 @@ function renderDetail() {
       <div class="toolkit-detail-cover ${tk.coverClass}" style="border-radius: var(--radius-xl); height: 240px; display: flex; align-items: center; justify-content: center; font-size: 80px; margin-bottom: 28px;">
         ${tk.emoji}
       </div>
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px; flex-wrap:wrap;">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;">
         <span class="badge badge-primary">${tk.category}</span>
         ${tk.badge ? `<span class="badge ${tk.comingSoon ? 'badge-muted' : 'badge-accent'}">${tk.badge}</span>` : ''}
-        <span style="font-size:0.8rem; color:var(--color-text-muted);">5 items included</span>
+        <span style="font-size:0.8rem; color:var(--color-text-muted);">${tk.includes.length} items included</span>
       </div>
       <h1 class="toolkit-detail-title">${tk.title}</h1>
+      <p style="font-size:1.05rem; font-weight:600; color:var(--color-primary); margin-bottom:12px; line-height:1.5;">${tk.outcome}</p>
       <p class="toolkit-detail-desc">${tk.description}</p>
       <div style="background: rgba(76,29,149,0.05); border-left: 3px solid var(--color-secondary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: 16px 20px; margin-bottom: 28px;">
         <p style="font-size:0.875rem; color:var(--color-text); font-style:italic; margin:0;">"${tk.problem}"</p>
@@ -447,6 +497,30 @@ function renderDetail() {
         <div class="toolkit-detail-includes-title"><span>📦</span> What's Included (${tk.includes.length} items)</div>
         <div>${includesHTML}</div>
       </div>
+      ${!tk.comingSoon ? `
+      <div style="background:var(--color-bg-light); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:20px; margin-bottom:28px;">
+        <div style="font-size:0.875rem; font-weight:700; color:var(--color-text); margin-bottom:12px;">Who This Is For</div>
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          ${tk.whoFor.map(w => `<div style="display:flex; align-items:center; gap:10px; font-size:0.875rem; color:var(--color-text-muted);"><span style="color:var(--color-accent); font-size:14px;">→</span>${w}</div>`).join('')}
+        </div>
+      </div>
+      <div style="margin-bottom:28px;">
+        <div style="font-size:0.875rem; font-weight:700; color:var(--color-text); margin-bottom:12px;">Frequently Asked</div>
+        ${tk.faqs.map(f => `
+          <div style="border-bottom:1px solid var(--color-border); padding:14px 0;">
+            <div style="font-size:0.875rem; font-weight:700; color:var(--color-text); margin-bottom:6px;">${f.q}</div>
+            <div style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.6;">${f.a}</div>
+          </div>
+        `).join('')}
+      </div>
+      <div style="background:rgba(163,230,53,0.06); border:1px solid rgba(163,230,53,0.2); border-radius:var(--radius-lg); padding:20px; display:flex; align-items:flex-start; gap:14px; margin-bottom:28px;">
+        <span style="font-size:28px; flex-shrink:0;">🛡️</span>
+        <div>
+          <div style="font-size:0.9rem; font-weight:800; color:var(--color-text); margin-bottom:4px;">7-Day Satisfaction Guarantee</div>
+          <p style="font-size:0.8rem; color:var(--color-text-muted); margin:0; line-height:1.6;">If you're not satisfied within 7 days of purchase, contact us and we'll make it right. No complicated process.</p>
+        </div>
+      </div>
+      ` : ''}
       <!-- Mobile purchase box -->
       <div class="purchase-box" style="position:static; margin-bottom: 0;" id="mobilePurchase">
         ${purchaseHTML}
