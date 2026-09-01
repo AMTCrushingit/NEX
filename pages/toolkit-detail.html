@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Toolkit Detail — Forwardly</title>
+<title>Toolkit Detail | Forwardly</title>
 <meta content="View toolkit details, contents, and purchase. Professional Readiness Made Simple." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -229,7 +229,6 @@
 <section class="section-sm" style="background: var(--color-bg-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
 <div class="container" style="max-width: 720px;">
 <div style="text-align:center; margin-bottom: 24px;">
-<span class="section-eyebrow">Need More Than Templates?</span>
 </div>
 <div style="background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: 36px 28px; text-align: center;">
 <h2 style="font-size: 1.375rem; font-weight: 800; color: var(--color-text); margin-bottom: 10px; letter-spacing: -0.02em;">Sometimes Templates Are Not Enough</h2>
@@ -290,8 +289,8 @@
 <a class="footer-link" href="toolkit-detail.html?id=founder">Founder</a>
 <a class="footer-link" href="toolkit-detail.html?id=consultant">Consulting</a>
 <a class="footer-link" href="toolkit-detail.html?id=ngo">Nonprofit</a>
-<a class="footer-link" href="contact.html">Career <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
-<a class="footer-link" href="contact.html">Small Business <span style="font-size:0.7rem; opacity:0.6;">— Coming Soon</span></a>
+<a class="footer-link" href="contact.html">Career <span style="font-size:0.7rem; opacity:0.6;">- Coming Soon</span></a>
+<a class="footer-link" href="contact.html">Small Business <span style="font-size:0.7rem; opacity:0.6;">- Coming Soon</span></a>
 </div>
 </div>
 </div>
@@ -306,7 +305,7 @@ const TOOLKITS = {
   career: {
     id: 'career', title: 'Career Toolkit', category: 'Career', emoji: '💼',
     coverClass: 'cover-career', price: '$14.99', badge: 'Coming Soon',
-    description: 'Everything you need to land your next role. Whether you\'re entering the job market for the first time or making a career pivot, this toolkit gives you the professional documents that get you noticed — and hired.',
+    description: 'Everything you need to land your next role. Whether you\'re entering the job market for the first time or making a career pivot, this toolkit gives you the professional documents that get you noticed: and hired.',
     problem: 'Most job seekers lose opportunities not because of lack of skill, but because their documents don\'t reflect their value. This toolkit fixes that.',
     includes: [
       { name: 'Resume Template', desc: 'Clean, ATS-friendly format that highlights your experience and skills.' },
@@ -388,7 +387,7 @@ function renderDetail() {
   const id = params.get('id') || 'founder';
   const tk = TOOLKITS[id] || TOOLKITS.founder;
 
-  document.title = `${tk.title} — Forwardly`;
+  document.title = `${tk.title}: Forwardly`;
   document.getElementById('breadcrumbCurrent').textContent = tk.title;
 
   const includesHTML = tk.includes.map(item => `
@@ -418,7 +417,7 @@ function renderDetail() {
       <div class="purchase-feature"><span class="purchase-feature-icon">🔒</span> Secure checkout</div>
     </div>
     <button class="btn btn-primary btn-full btn-lg btn-purchase" style="margin-bottom:12px;">
-      Get This Toolkit — ${tk.price}
+      Get This Toolkit: ${tk.price}
     </button>
     <p style="font-size:0.75rem; color:var(--color-text-muted); text-align:center; margin:0;">
       Secure payment · No subscription required
@@ -476,7 +475,7 @@ function renderDetail() {
   handleResize();
   window.addEventListener('resize', handleResize);
 
-  // Related — only show live toolkits
+  // Related: only show live toolkits
   const related = Object.values(TOOLKITS).filter(t => t.id !== id && !t.comingSoon).slice(0, 4);
   document.getElementById('relatedGrid').innerHTML = related.map(t => `
     <a href="toolkit-detail.html?id=${t.id}" class="related-card">
@@ -495,7 +494,7 @@ function renderDetail() {
       btn.innerHTML = '⏳ Processing...';
       btn.disabled = true;
       setTimeout(() => {
-        btn.innerHTML = '✓ Download Ready — Check Your Email';
+        btn.innerHTML = '✓ Download Ready: Check Your Email';
         btn.style.background = '#16a34a';
         setTimeout(() => {
           btn.innerHTML = original;
